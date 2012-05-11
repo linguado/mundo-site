@@ -1,0 +1,5 @@
+D:\Development\site\MundoMvc4.Common\bin\Debug\MundoMvc4.Common.dll
+D:\Development\site\MundoMvc4.Common\bin\Debug\MundoMvc4.Common.pdb
+D:\Development\site\MundoMvc4.Common\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\site\MundoMvc4.Common\obj\Debug\MundoMvc4.Common.dll
+D:\Development\site\MundoMvc4.Common\obj\Debug\MundoMvc4.Common.pdb

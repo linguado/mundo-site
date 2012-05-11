@@ -1,0 +1,17 @@
+﻿@using MundoMvc4.Globalization
+@model Resource
+
+@{
+    ViewBag.Title = GDelete.Title;
+}
+
+<h2>@GDelete.Head</h2>
+
+<h3>@String.Format(GDelete.Message, String.Format("{0} | {1}", Model.TypeName, Model.Property))</h3>
+
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Delete" /> 
+    </p>
+}

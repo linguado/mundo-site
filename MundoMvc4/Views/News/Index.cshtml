@@ -1,0 +1,31 @@
+﻿@using MundoMvc4.Common
+@using MundoMvc4.Globalization
+@model IEnumerable<NewsBlockLocal>
+
+@{
+    ViewBag.Title = GNews.IndexTitle;
+}
+
+<h1>@GNews.IndexTitle</h1>
+
+<p>
+    @Html.ActionLink(GActions.Create, "Create",Request.RequestContext.RouteData.Values)
+</p>
+
+@foreach (var item in Model) {
+    <div>
+        <h2>@Html.ActionLink(item.Name, "Details", new { argument = item.NewsBlock.Id })</h2>
+        <p>@Html.Raw(item.Summary) </p>
+        @if (User.IsInRole(MundoRoles.NEWS))
+        {
+            <span>
+                @Html.ActionLink(GActions.Edit, "Edit", new {argument = item.NewsBlock.Id}) [
+                @Html.ActionLink("ru-Ru", "EditLocal", new {argument = item.NewsBlock.Id, lng = "ru-Ru"})
+                @Html.ActionLink("en-US", "EditLocal", new {argument = item.NewsBlock.Id, lng = "en-US"})
+                @Html.ActionLink("pt-Br", "EditLocal", new {argument = item.NewsBlock.Id, lng = "pt-Br"}) ]
+            </span>
+        }
+        <hr/>
+    </div>
+}
+

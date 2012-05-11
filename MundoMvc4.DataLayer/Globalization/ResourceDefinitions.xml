@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+  <Type name="GActions">
+    <Field name="Create" default="Create new" />
+    <Field name="Delete" default="Delete"/>
+    <Field name="Details" default="Region"/>
+    <Field name="Edit" default="Edit"/>
+    <Field name="EditLocal" default="Localize"/>
+    <Field name="Save" default="Save"/>
+  </Type>
+  <Type name="GArticles">
+    <Field name="CreateLegend" default="Specify values here"/>
+    <Field name="CreateTitle" default="New Article"/>
+    <Field name="EditHeader" default="Article Edit"/>
+    <Field name="EditLegend" default="Edit It!"/>
+    <Field name="IndexTitle" default="Edit It!"/>
+  </Type>
+  <Type name="GDelete">
+    <Field name="Title" default="Delete"/>
+    <Field name="Submit" default="Delete"/>
+    <Field name="Message" default="Are you sure you want to delete {0}?"/>
+    <Field name="Head" default="Attention!"/>
+  </Type>
+  <Type name="GGroups">
+    <Field name="CreateTitle" default="Create Group"/>
+    <Field name="EtidTitle" default="Edit Group"/>
+    <Field name="Gyms" default="Gyms"/>
+    <Field name="GymsAdd" default="Add Gym"/>
+    <Field name="IndexTitle" default="Groups"/>
+    <Field name="Legend" default="Fill it!"/>
+  </Type>
+  <Type name="GGyms">
+    <Field name="CreateTitle" default="Create Gym"/>
+    <Field name="EditSchedule" default="Edit schedule"/>
+    <Field name="EditTitle" default="Edit Gym"/>
+    <Field name="IndexTitle" default="Gyms"/>
+    <Field name="Legend" default="Fill it!"/>
+    <Field name="Schedule" default="Schedule"/>
+  </Type>
+  <Type name="GMembership">
+    <Field name="LogOnButton" default="Log On"/>
+    <Field name="LogOnError" default="Login was unsuccessful. Please correct the errors and try again."/>
+    <Field name="LogOnLegend" default="Log On Form"/>
+    <Field name="LogOnRegister" default="Register"/>
+    <Field name="LogOnRegisterMessage" default="if you don`t have an account."/>
+    <Field name="LogOnSubHeader" default="Enter your username and password below."/>
+    <Field name="LogOnTitle" default="Log On"/>
+    <Field name="RegisterButton" default="Register"/>
+    <Field name="RegisterError" default="Account creation was unsuccessful. Please correct the errors and try again."/>
+    <Field name="RegisterInfo" default="Passwords are required to be a minimum of {0} characters in length."/>
+    <Field name="RegisterLegend" default="Registration Form"/>
+    <Field name="RegisterSubHeader" default="Use the form below to create a new account."/>
+    <Field name="RegisterTitle" default="Register"/>
+  </Type>
+  <Type name="GMetadata">
+    <Field name="Body" default="Body/Content"/>
+    <Field name="InvalidMail" default="Invalid e-mail format {0}"/>
+    <Field name="InvalidPhone" default="Invalid phone format {0}"/>
+    <Field name="InvalidStringLength" default="Max Length {0}, Min - {1}"/>
+    <Field name="IsActive" default="Active"/>
+    <Field name="Name" default="Display Name"/>
+    <Field name="Required" default="Required field"/>
+    <Field name="SysName" default="System name"/>
+  </Type>
+  <Type name="GNews">
+    <Field name="CreateTitle" default="Create news item"/>
+    <Field name="EditTitle" default="Edit news"/>
+    <Field name="IndexTitle" default="News"/>
+    <Field name="Legend" default="Fill news"/>
+  </Type>
+  <Type name="GRegions">
+    <Field name="CreateLegend" default="New region"/>
+    <Field name="CreateSubmit" default="Create"/>
+    <Field name="CreateTitle" default="Create new region"/>
+    <Field name="EMail" default="E-Mail"/>
+    <Field name="EMailDescr" default="E-Mail is displayed on main page"/>
+    <Field name="IndexTitle" default="Our regions"/>
+    <Field name="LinkGroupCreate" default="Create new group"/>
+    <Field name="LinkGroups" default="Region groups"/>
+    <Field name="LinkNews" default="Region news"/>
+    <Field name="Phone" default="Contact phone"/>
+    <Field name="PhoneDescr" default="Phone number displayed on main page"/>
+  </Type>
+  <Type name="GSchedule">
+    <Field name="Fr" default="Fr"/>
+    <Field name="Mo" default="Mo"/>
+    <Field name="Sa" default="Sa"/>
+    <Field name="Su" default="Su"/>
+    <Field name="Th" default="Th"/>
+    <Field name="Tu" default="Tu"/>
+    <Field name="We" default="We"/>
+  </Type>
+  <Type name="GSections">
+    <Field name="EditTitle" default="Edit section"/>
+    <Field name="Legend" default="Section details"/>
+  </Type>
+  <Type name="Master">
+    <Field name="HomeTitle" default="Mundocapoeira Home"/>
+    <Field name="LinkCopyright" default="Mundocapoeira development"/>
+    <Field name="LinkFacebook" default="Facebook"/>
+    <Field name="LinkLogOff" default="Log off"/>
+    <Field name="LinkLogOn" default="Log on"/>
+    <Field name="LinkNews" default="News"/>
+    <Field name="LinkRegister" default="Register"/>
+    <Field name="LinkTwitter" default="Twitter"/>
+    <Field name="LinkVKontakte" default="vKontakte"/>
+    <Field name="TitleRegionSelect" default="Select region"/>
+  </Type>
+  <Type name="Menu">
+    <Field name="Capoeira" default="Capoeira"/>
+    <Field name="CapoeiraAbout" default="About"/>
+    <Field name="CapoeiraHistory" default="History"/>
+    <Field name="CapoeiraMestres" default="Master"/>
+    <Field name="CapoeiraMundo" default="Mundo"/>
+    <Field name="CapoeiraMusic" default="Music"/>
+    <Field name="CapoeiraOurSchool" default="Our School"/>
+    <Field name="Classes" default="Classes"/>
+    <Field name="ClassesAbout" default="About"/>
+    <Field name="ClassesContacts" default="Contacts"/>
+    <Field name="ClassesFAQ" default="F.A.Q."/>
+    <Field name="ClassesGradations" default="Gradations"/>
+    <Field name="ClassesSchedule" default="Scedule"/>
+    <Field name="ClassesTutors" default="Instructors"/>
+    <Field name="Events" default="Events"/>
+    <Field name="EventsArchive" default="Archive"/>
+    <Field name="EventsCalendar" default="Calendar"/>
+    <Field name="EventsNews" default="News"/>
+    <Field name="RegionMy" default="My Region"/>
+    <Field name="RegionsClasses" default="Classes"/>
+    <Field name="RegionsForMe" default="For me"/>
+    <Field name="RegionsGroups" default="Groups"/>
+    <Field name="RegionsNews" default="News"/>
+    <Field name="RegionsOther" default="Other"/>
+    <Field name="Resources" default="Resources"/>
+    <Field name="ResourcesArticles" default="Articles"/>
+    <Field name="ResourcesAudio" default="Audio"/>
+    <Field name="ResourcesDictionary" default="Dictionary"/>
+    <Field name="ResourcesPhoto" default="Photos"/>
+    <Field name="ResourcesSongs" default="Songs"/>
+    <Field name="ResourcesVideo" default="Video"/>
+    <Field name="ShowGroup" default="Show Group"/>
+    <Field name="ShowGroupClasses" default="Classes"/>
+    <Field name="ShowGroupDances" default="Dances"/>
+  </Type>
+</Resources>

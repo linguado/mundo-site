@@ -1,0 +1,22 @@
+﻿@using MundoMvc4.Common
+@using MundoMvc4.Globalization
+@model IEnumerable<GroupInfo>
+
+@{
+    ViewBag.Title = GGroups.IndexTitle;
+}
+
+<h2>@GGroups.IndexTitle</h2>
+
+@foreach (var item in Model) {
+    <div>
+        <h4><a href="@Url.Action("Details","Groups",new{argument=item.SysName})">@item.Name</a></h4>
+        <p>there will be text,image and some description</p>
+        @if (User.IsInRole(MundoRoles.COACH))
+        {
+            @Html.ActionLink(GActions.Edit, "Edit", new { argument = item.SysName })
+        }
+        @Html.ActionLink(GGroups.Gyms, "Index", "Gyms", new { argument = item.SysName }, null) |
+        @Html.ActionLink(GGyms.Schedule, "ForGroup", "Schedule", new { argument = item.SysName }, null) [
+    </div>
+}

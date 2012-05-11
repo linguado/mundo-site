@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MundoMvc4BaseModelStoreContainer" CdmEntityContainer="MundoMvc4BaseEntities">
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArticleLocals">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.ArticleLocal">
+        <MappingFragment StoreEntitySet="ArticleLocal">
+          <ScalarProperty Name="ArticleId" ColumnName="ArticleId" />
+          <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+          <ScalarProperty Name="IsRepeatable" ColumnName="IsRepeatable" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventLocals">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.EventLocal">
+        <MappingFragment StoreEntitySet="EventLocal">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupLocals">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.GroupLocal">
+        <MappingFragment StoreEntitySet="GroupLocal">
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gyms">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.Gym">
+        <MappingFragment StoreEntitySet="Gym">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GymLocals">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.GymLocal">
+        <MappingFragment StoreEntitySet="GymLocal">
+          <ScalarProperty Name="GymId" ColumnName="GymId" />
+          <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.Language">
+        <MappingFragment StoreEntitySet="Language">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsBlocks">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.NewsBlock">
+        <MappingFragment StoreEntitySet="NewsBlock">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Expires" ColumnName="Expires" />
+          <ScalarProperty Name="IsGlobal" ColumnName="IsGlobal" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsBlockLocals">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.NewsBlockLocal">
+        <MappingFragment StoreEntitySet="NewsBlockLocal">
+          <ScalarProperty Name="NewsBlockId" ColumnName="NewsBlockId" />
+          <ScalarProperty Name="LangId" ColumnName="LangId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SysName" ColumnName="SysName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegionLocals">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.RegionLocal">
+        <MappingFragment StoreEntitySet="RegionLocal">
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="MundoMvc4BaseModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="GymId" ColumnName="GymId" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Starts" ColumnName="Starts" />
+          <ScalarProperty Name="Ends" ColumnName="Ends" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

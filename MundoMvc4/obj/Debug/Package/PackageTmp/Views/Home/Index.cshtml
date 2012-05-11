@@ -1,0 +1,19 @@
+﻿@model MundoMvc4.DataLayer.DataProviders.HomeModel
+@using MundoMvc4.Globalization
+@{
+    ViewBag.Title = Master.HomeTitle;
+}
+@section HeadSection
+{
+    <link type="text/css" href="@Url.Content("~/Content/page_home.css")" rel="stylesheet"/>
+}
+<div id="content">
+    <section id="capo-article">
+        <h2 id="capo-head">@Html.ActionLink(Model.Capoeira.Name, "Details", "Articles", new { argument = "capoeira_main" }, null) &mdash; </h2>
+        <p>@Model.Capoeira.Body</p>
+    </section>
+    <section id="mundo-article">
+        <h2>@Html.ActionLink(Model.Mundo.Name, "Details", "Articles", new { argument = "capoeira_mundo" }, null)</h2>
+        <p>@Model.Mundo.Body</p>
+    </section>
+</div>

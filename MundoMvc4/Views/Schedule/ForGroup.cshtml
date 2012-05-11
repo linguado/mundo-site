@@ -1,0 +1,60 @@
+﻿@using MundoMvc4
+@model IEnumerable<ScheduleInfo>
+
+@{
+    ViewBag.Title = "For Group";
+    Dictionary<DayOfWeek,String> days;
+    var result = CalendarHelper.PrepareRegional(Model,out days);
+}
+@section HeadSection
+{
+    <style type="text/css">
+        .schedule {
+            width: inherit;
+            clear: left;
+        }
+        .schedule tr   
+        {
+        }
+        .schedule tr td 
+        {
+            margin: 0px; 
+        }
+    </style>
+}
+<table class="schedule">
+    <tr>
+        <th></th>
+        @foreach (var day in days.Values)
+        {
+            <th>@day</th>
+        }
+    </tr>
+
+@foreach (var item in result)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        @foreach (var day in days.Keys)
+        {
+            <td>@DayRenderer(item.GetItem(day))</td>
+        }
+    </tr>
+}
+</table>
+@helper DayRenderer(IEnumerable<ScheduleInfo> items)
+    {
+        if(items!=null)
+        {
+            <ol style="margin: 0">
+                @foreach (var item in items)
+                {
+                    <li style="margin: 0;">
+                        @Html.ActionLink(item.GymInfo.Name, "Details", "Gyms", new {argument = item.GymInfo.SysName}, null)
+                    </li>
+                }
+            </ol>
+        }
+}

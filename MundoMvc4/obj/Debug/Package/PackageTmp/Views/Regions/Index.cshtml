@@ -1,0 +1,24 @@
+﻿@using MundoMvc4.Common
+@using MundoMvc4.Globalization
+@model IEnumerable<RegionInfo>
+
+@{
+    ViewBag.Title = GRegions.IndexTitle;
+}
+
+<p>
+    @Html.ActionLink(GActions.Create, "Create")
+</p>
+
+@foreach (var item in Model) {
+    <div>
+        <h4>@Html.ActionLink(item.Name, "Details", new { argument = item.SysName })</h4>
+        <p>there will be text image and some description</p>
+        @if(User.IsInRole(MundoRoles.REGIONAL))
+        {
+  <text>@Html.ActionLink(GRegions.LinkNews, "Index", "News", new {argument = item.SysName}, null)|</text>
+        }
+        @Html.ActionLink(GRegions.LinkGroups, "Index","Groups", new { argument = item.SysName },null)
+        @Html.ActionLink(GRegions.LinkGroupCreate, "Create", "Groups", new { argument = item.SysName }, null)
+    </div>
+}

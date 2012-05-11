@@ -1,0 +1,19 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Xml"#>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="MundoMvc4.DataLayer.Globalization" #>
+using System.Globalization;
+using MundoMvc4.DataLayer.Globalization;
+namespace MundoMvc4.Globalization
+{
+<# foreach (var node in XmlParser.Read()) {#>
+	public class <#= node.ClassName #> 
+	{
+	<# foreach (var field in node.Fields) {#>
+	public static string <#= field.Name #> {get{return ResourceManager.Provider.GetResource("<#= node.ClassName #>","<#= field.Name #>",CultureInfo.CurrentUICulture.Name,"<#= field.Default #>");}}
+  <#}#>
+	}
+  <#}#>
+}

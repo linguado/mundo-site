@@ -1,0 +1,47 @@
+﻿@using MundoMvc4.Globalization
+@model MundoMvc4.DataLayer.NewsBlock
+
+@{
+    ViewBag.Title = GNews.CreateTitle;
+}
+@section HeadSection
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"> </script>
+}
+<h2>@GNews.CreateTitle</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@GNews.Legend</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsGlobal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsGlobal)
+            @Html.ValidationMessageFor(model => model.IsGlobal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsTop)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsTop)
+            @Html.ValidationMessageFor(model => model.IsTop)
+        </div>
+
+        <p>
+            <input type="submit" value="@GActions.Save" />
+        </p>
+    </fieldset>
+}

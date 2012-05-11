@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43138AC2-A090-419B-9CE0-0C65B89C9A02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MundoMvc4.DataLayer</RootNamespace>
+    <AssemblyName>MundoMvc4.DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\EntityCache.cs" />
+    <Compile Include="Cache\LocalizedDataCache.cs" />
+    <Compile Include="DataProviders\ArticleDataProvider.cs" />
+    <Compile Include="DataProviders\DataProviderBase.cs" />
+    <Compile Include="DataProviders\DataProviderException.cs" />
+    <Compile Include="DataProviders\DataProviderFactory.cs" />
+    <Compile Include="DataProviders\GroupDataProvider.cs" />
+    <Compile Include="DataProviders\GymDataProvider.cs" />
+    <Compile Include="DataProviders\NewsDataProvider.cs" />
+    <Compile Include="DataProviders\RegionDataProvier.cs" />
+    <Compile Include="DataProviders\ResourceDataProvider.cs" />
+    <Compile Include="DataProviders\ScheduleDataProvider.cs" />
+    <Compile Include="DataProviders\HomeDataProvider.cs" />
+    <Compile Include="Domain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Domain.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\GroupSchedule.cs" />
+    <Compile Include="Domain\RegionInfo.cs" />
+    <Compile Include="Domain\RegionSchedule.cs" />
+    <Compile Include="Domain\Validaiton.cs" />
+    <Compile Include="Globalization\DbResourceProvider.cs" />
+    <Compile Include="Globalization\ResourceManager.cs" />
+    <Compile Include="Globalization\ResourceSet.cs" />
+    <Compile Include="Globalization\ResourceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Globalization\XmlParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Domain.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Domain.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Globalization\ResourceTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MundoMvc4.Common\MundoMvc4.Common.csproj">
+      <Project>{FC0693DE-1809-4166-8260-CF829345F5E2}</Project>
+      <Name>MundoMvc4.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Globalization\ResourceDefinitions.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

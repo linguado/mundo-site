@@ -1,0 +1,8 @@
+D:\Development\site\MundoMvc4.DataLayer\bin\Debug\MundoMvc4.DataLayer.dll.config
+D:\Development\site\MundoMvc4.DataLayer\bin\Debug\MundoMvc4.DataLayer.dll
+D:\Development\site\MundoMvc4.DataLayer\bin\Debug\MundoMvc4.DataLayer.pdb
+D:\Development\site\MundoMvc4.DataLayer\bin\Debug\MundoMvc4.Common.dll
+D:\Development\site\MundoMvc4.DataLayer\bin\Debug\MundoMvc4.Common.pdb
+D:\Development\site\MundoMvc4.DataLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\site\MundoMvc4.DataLayer\obj\Debug\MundoMvc4.DataLayer.dll
+D:\Development\site\MundoMvc4.DataLayer\obj\Debug\MundoMvc4.DataLayer.pdb

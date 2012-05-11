@@ -1,0 +1,33 @@
+﻿@using MundoMvc4.Common
+@using MundoMvc4.Globalization
+@model IEnumerable<MundoMvc4.Controllers.ResourceInfo>
+
+@{
+    ViewBag.Title = "Resources";
+    var languages = new[] {"ru-RU", "en-US", "pt-BR"};
+}
+<h1>Resources</h1>
+<div>
+    @Html.ActionLink("Reload","Reload")
+</div>
+@foreach (var item in Model) {
+    <div>
+        <div>@item.TypeName | @Html.ActionLink("Add new", "Create", new { type = item.TypeName })</div>
+        @foreach(var property in item.Properties)
+        {
+            <div>@property.Property [
+            @foreach(var lng in languages)
+            {
+                @Html.ActionLink(lng, "Edit", new { type = property.TypeName, property = property.Property, lng })
+            } 
+            ]
+            </div>
+            if (!property.IsSystem)
+            {
+                @Html.ActionLink("Delete", "Delete", new { type = property.TypeName, property = property.Property })
+            }
+            <br />
+        }
+        
+    </div><br/>
+}

@@ -1,0 +1,1790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MundoMvc4BaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MundoMvc4BaseModelStoreContainer">
+          <EntitySet Name="Article" EntityType="MundoMvc4BaseModel.Store.Article" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ArticleLocal" EntityType="MundoMvc4BaseModel.Store.ArticleLocal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Event" EntityType="MundoMvc4BaseModel.Store.Event" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventLocal" EntityType="MundoMvc4BaseModel.Store.EventLocal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group" EntityType="MundoMvc4BaseModel.Store.Group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GroupLocal" EntityType="MundoMvc4BaseModel.Store.GroupLocal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Gym" EntityType="MundoMvc4BaseModel.Store.Gym" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GymLocal" EntityType="MundoMvc4BaseModel.Store.GymLocal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Language" EntityType="MundoMvc4BaseModel.Store.Language" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NewsBlock" EntityType="MundoMvc4BaseModel.Store.NewsBlock" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NewsBlockLocal" EntityType="MundoMvc4BaseModel.Store.NewsBlockLocal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Region" EntityType="MundoMvc4BaseModel.Store.Region" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RegionLocal" EntityType="MundoMvc4BaseModel.Store.RegionLocal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Resources" EntityType="MundoMvc4BaseModel.Store.Resources" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Schedule" EntityType="MundoMvc4BaseModel.Store.Schedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Section" EntityType="MundoMvc4BaseModel.Store.Section" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GroupInfo" EntityType="MundoMvc4BaseModel.Store.GroupInfo" store:Type="Views" store:Schema="dbo" store:Name="GroupInfo">
+            <DefiningQuery>SELECT 
+      [GroupInfo].[Id] AS [Id], 
+      [GroupInfo].[SysName] AS [SysName], 
+      [GroupInfo].[IsActive] AS [IsActive], 
+      [GroupInfo].[RegionId] AS [RegionId], 
+      [GroupInfo].[Local] AS [Local], 
+      [GroupInfo].[Name] AS [Name], 
+      [GroupInfo].[Body] AS [Body]
+      FROM [dbo].[GroupInfo] AS [GroupInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GymInfo" EntityType="MundoMvc4BaseModel.Store.GymInfo" store:Type="Views" store:Schema="dbo" store:Name="GymInfo">
+            <DefiningQuery>SELECT 
+      [GymInfo].[Name] AS [Name], 
+      [GymInfo].[Body] AS [Body], 
+      [GymInfo].[Local] AS [Local], 
+      [GymInfo].[Id] AS [Id], 
+      [GymInfo].[SysName] AS [SysName], 
+      [GymInfo].[IsActive] AS [IsActive], 
+      [GymInfo].[GroupId] AS [GroupId]
+      FROM [dbo].[GymInfo] AS [GymInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RegionInfo" EntityType="MundoMvc4BaseModel.Store.RegionInfo" store:Type="Views" store:Schema="dbo" store:Name="RegionInfo">
+            <DefiningQuery>SELECT 
+      [RegionInfo].[SysName] AS [SysName], 
+      [RegionInfo].[IsActive] AS [IsActive], 
+      [RegionInfo].[Name] AS [Name], 
+      [RegionInfo].[Body] AS [Body], 
+      [RegionInfo].[Id] AS [Id], 
+      [RegionInfo].[Local] AS [Local], 
+      [RegionInfo].[Phone] AS [Phone], 
+      [RegionInfo].[EMail] AS [EMail]
+      FROM [dbo].[RegionInfo] AS [RegionInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ScheduleInfo" EntityType="MundoMvc4BaseModel.Store.ScheduleInfo" store:Type="Views" store:Schema="dbo" store:Name="ScheduleInfo">
+            <DefiningQuery>SELECT 
+      [ScheduleInfo].[Id] AS [Id], 
+      [ScheduleInfo].[GymId] AS [GymId], 
+      [ScheduleInfo].[Day] AS [Day], 
+      [ScheduleInfo].[Starts] AS [Starts], 
+      [ScheduleInfo].[Ends] AS [Ends], 
+      [ScheduleInfo].[IsActive] AS [IsActive], 
+      [ScheduleInfo].[Price] AS [Price], 
+      [ScheduleInfo].[Local] AS [Local], 
+      [ScheduleInfo].[GroupId] AS [GroupId], 
+      [ScheduleInfo].[RegionId] AS [RegionId]
+      FROM [dbo].[ScheduleInfo] AS [ScheduleInfo]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ArticleLocal_Article" Association="MundoMvc4BaseModel.Store.FK_ArticleLocal_Article">
+            <End Role="Article" EntitySet="Article" />
+            <End Role="ArticleLocal" EntitySet="ArticleLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArticleLocal_Language" Association="MundoMvc4BaseModel.Store.FK_ArticleLocal_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="ArticleLocal" EntitySet="ArticleLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Region" Association="MundoMvc4BaseModel.Store.FK_Event_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventLocal_Event" Association="MundoMvc4BaseModel.Store.FK_EventLocal_Event">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventLocal" EntitySet="EventLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventLocal_Language" Association="MundoMvc4BaseModel.Store.FK_EventLocal_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="EventLocal" EntitySet="EventLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupLocal_Groups" Association="MundoMvc4BaseModel.Store.FK_GroupLocal_Groups">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="GroupLocal" EntitySet="GroupLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupLocal_Language" Association="MundoMvc4BaseModel.Store.FK_GroupLocal_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="GroupLocal" EntitySet="GroupLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Region" Association="MundoMvc4BaseModel.Store.FK_Groups_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Group" EntitySet="Group" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gym_Group" Association="MundoMvc4BaseModel.Store.FK_Gym_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Gym" EntitySet="Gym" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GymLocal_Gym" Association="MundoMvc4BaseModel.Store.FK_GymLocal_Gym">
+            <End Role="Gym" EntitySet="Gym" />
+            <End Role="GymLocal" EntitySet="GymLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GymLocal_Language" Association="MundoMvc4BaseModel.Store.FK_GymLocal_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="GymLocal" EntitySet="GymLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsBlock_Region" Association="MundoMvc4BaseModel.Store.FK_NewsBlock_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="NewsBlock" EntitySet="NewsBlock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsBlockLocal_Language" Association="MundoMvc4BaseModel.Store.FK_NewsBlockLocal_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="NewsBlockLocal" EntitySet="NewsBlockLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsBlockLocal_NewsBlock" Association="MundoMvc4BaseModel.Store.FK_NewsBlockLocal_NewsBlock">
+            <End Role="NewsBlock" EntitySet="NewsBlock" />
+            <End Role="NewsBlockLocal" EntitySet="NewsBlockLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegionLocal_Language" Association="MundoMvc4BaseModel.Store.FK_RegionLocal_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="RegionLocal" EntitySet="RegionLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegionLocal_Region" Association="MundoMvc4BaseModel.Store.FK_RegionLocal_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="RegionLocal" EntitySet="RegionLocal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resources_Language" Association="MundoMvc4BaseModel.Store.FK_Resources_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="Resources" EntitySet="Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Gym" Association="MundoMvc4BaseModel.Store.FK_Schedule_Gym">
+            <End Role="Gym" EntitySet="Gym" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Language" Association="MundoMvc4BaseModel.Store.FK_Section_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="Section" EntitySet="Section" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArticleLocal">
+          <Key>
+            <PropertyRef Name="ArticleId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="ArticleId" Type="int" Nullable="false" />
+          <Property Name="LocalId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="IssueDate" Type="date" />
+          <Property Name="IssueTime" Type="time" />
+          <Property Name="IsRepeatable" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventLocal">
+          <Key>
+            <PropertyRef Name="EventId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="EventId" Type="int" Nullable="false" />
+          <Property Name="LocalId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupLocal">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="LangId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gym">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="SubwayStation" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="GymLocal">
+          <Key>
+            <PropertyRef Name="GymId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="GymId" Type="int" Nullable="false" />
+          <Property Name="LocalId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="NewsBlock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsGlobal" Type="bit" Nullable="false" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="IsTop" Type="bit" Nullable="false" />
+          <Property Name="Posted" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewsBlockLocal">
+          <Key>
+            <PropertyRef Name="NewsBlockId" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Name="NewsBlockId" Type="int" Nullable="false" />
+          <Property Name="LangId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="EMail" Type="varchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="RegionLocal">
+          <Key>
+            <PropertyRef Name="RegionId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="LocalId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resources">
+          <Key>
+            <PropertyRef Name="TypeName" />
+            <PropertyRef Name="Property" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Name="TypeName" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="Property" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="LangId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="IsSystem" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GymId" Type="int" Nullable="false" />
+          <Property Name="Day" Type="smallint" Nullable="false" />
+          <Property Name="Starts" Type="time" Nullable="false" />
+          <Property Name="Ends" Type="time" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SysName" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="LangId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Usage" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MundoMvc4Base.dbo.GroupInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="GroupInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            
+            
+            
+            <PropertyRef Name="Local" />
+            
+            
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="Local" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MundoMvc4Base.dbo.GymInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="GymInfo">
+          <Key>
+            
+            
+            <PropertyRef Name="Local" />
+            <PropertyRef Name="Id" />
+            
+            
+            
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Local" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MundoMvc4Base.dbo.RegionInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="RegionInfo">
+          <Key>
+            
+            
+            
+            
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Local" />
+            
+            
+          </Key>
+          <Property Name="SysName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Local" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="EMail" Type="varchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MundoMvc4Base.dbo.ScheduleInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ScheduleInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            
+            
+            
+            
+            
+            
+            <PropertyRef Name="Local" />
+            
+            
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="GymId" Type="int" Nullable="false" />
+          <Property Name="Day" Type="smallint" Nullable="false" />
+          <Property Name="Starts" Type="time" Nullable="false" />
+          <Property Name="Ends" Type="time" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="Local" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="RegionId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ArticleLocal_Article">
+          <End Role="Article" Type="MundoMvc4BaseModel.Store.Article" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ArticleLocal" Type="MundoMvc4BaseModel.Store.ArticleLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Article">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArticleLocal">
+              <PropertyRef Name="ArticleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArticleLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ArticleLocal" Type="MundoMvc4BaseModel.Store.ArticleLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArticleLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Store.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Event" Type="MundoMvc4BaseModel.Store.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventLocal_Event">
+          <End Role="Event" Type="MundoMvc4BaseModel.Store.Event" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EventLocal" Type="MundoMvc4BaseModel.Store.EventLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventLocal">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EventLocal" Type="MundoMvc4BaseModel.Store.EventLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupLocal_Groups">
+          <End Role="Group" Type="MundoMvc4BaseModel.Store.Group" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GroupLocal" Type="MundoMvc4BaseModel.Store.GroupLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupLocal">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GroupLocal" Type="MundoMvc4BaseModel.Store.GroupLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupLocal">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Store.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Group" Type="MundoMvc4BaseModel.Store.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gym_Group">
+          <End Role="Group" Type="MundoMvc4BaseModel.Store.Group" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gym" Type="MundoMvc4BaseModel.Store.Gym" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gym">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GymLocal_Gym">
+          <End Role="Gym" Type="MundoMvc4BaseModel.Store.Gym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GymLocal" Type="MundoMvc4BaseModel.Store.GymLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GymLocal">
+              <PropertyRef Name="GymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GymLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GymLocal" Type="MundoMvc4BaseModel.Store.GymLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GymLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsBlock_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Store.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsBlock" Type="MundoMvc4BaseModel.Store.NewsBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsBlock">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsBlockLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsBlockLocal" Type="MundoMvc4BaseModel.Store.NewsBlockLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsBlockLocal">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsBlockLocal_NewsBlock">
+          <End Role="NewsBlock" Type="MundoMvc4BaseModel.Store.NewsBlock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsBlockLocal" Type="MundoMvc4BaseModel.Store.NewsBlockLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsBlock">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsBlockLocal">
+              <PropertyRef Name="NewsBlockId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegionLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RegionLocal" Type="MundoMvc4BaseModel.Store.RegionLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RegionLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegionLocal_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Store.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RegionLocal" Type="MundoMvc4BaseModel.Store.RegionLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RegionLocal">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resources_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Resources" Type="MundoMvc4BaseModel.Store.Resources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resources">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Gym">
+          <End Role="Gym" Type="MundoMvc4BaseModel.Store.Gym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Schedule" Type="MundoMvc4BaseModel.Store.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="GymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Store.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Section" Type="MundoMvc4BaseModel.Store.Section" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Section">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MundoMvc4BaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MundoMvc4BaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Articles" EntityType="MundoMvc4BaseModel.Article" />
+          <EntitySet Name="ArticleLocals" EntityType="MundoMvc4BaseModel.ArticleLocal" />
+          <EntitySet Name="Events" EntityType="MundoMvc4BaseModel.Event" />
+          <EntitySet Name="EventLocals" EntityType="MundoMvc4BaseModel.EventLocal" />
+          <EntitySet Name="Groups" EntityType="MundoMvc4BaseModel.Group" />
+          <EntitySet Name="GroupLocals" EntityType="MundoMvc4BaseModel.GroupLocal" />
+          <EntitySet Name="Gyms" EntityType="MundoMvc4BaseModel.Gym" />
+          <EntitySet Name="GymLocals" EntityType="MundoMvc4BaseModel.GymLocal" />
+          <EntitySet Name="Languages" EntityType="MundoMvc4BaseModel.Language" />
+          <EntitySet Name="NewsBlocks" EntityType="MundoMvc4BaseModel.NewsBlock" />
+          <EntitySet Name="NewsBlockLocals" EntityType="MundoMvc4BaseModel.NewsBlockLocal" />
+          <EntitySet Name="Regions" EntityType="MundoMvc4BaseModel.Region" />
+          <EntitySet Name="RegionLocals" EntityType="MundoMvc4BaseModel.RegionLocal" />
+          <EntitySet Name="Schedules" EntityType="MundoMvc4BaseModel.Schedule" />
+          <AssociationSet Name="FK_ArticleLocal_Article" Association="MundoMvc4BaseModel.FK_ArticleLocal_Article">
+            <End Role="Article" EntitySet="Articles" />
+            <End Role="ArticleLocal" EntitySet="ArticleLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArticleLocal_Language" Association="MundoMvc4BaseModel.FK_ArticleLocal_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="ArticleLocal" EntitySet="ArticleLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Region" Association="MundoMvc4BaseModel.FK_Event_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventLocal_Event" Association="MundoMvc4BaseModel.FK_EventLocal_Event">
+            <End Role="Event" EntitySet="Events" />
+            <End Role="EventLocal" EntitySet="EventLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventLocal_Language" Association="MundoMvc4BaseModel.FK_EventLocal_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="EventLocal" EntitySet="EventLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupLocal_Groups" Association="MundoMvc4BaseModel.FK_GroupLocal_Groups">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="GroupLocal" EntitySet="GroupLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Region" Association="MundoMvc4BaseModel.FK_Groups_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Group" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gym_Group" Association="MundoMvc4BaseModel.FK_Gym_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Gym" EntitySet="Gyms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupLocal_Language" Association="MundoMvc4BaseModel.FK_GroupLocal_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="GroupLocal" EntitySet="GroupLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GymLocal_Gym" Association="MundoMvc4BaseModel.FK_GymLocal_Gym">
+            <End Role="Gym" EntitySet="Gyms" />
+            <End Role="GymLocal" EntitySet="GymLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Gym" Association="MundoMvc4BaseModel.FK_Schedule_Gym">
+            <End Role="Gym" EntitySet="Gyms" />
+            <End Role="Schedule" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GymLocal_Language" Association="MundoMvc4BaseModel.FK_GymLocal_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="GymLocal" EntitySet="GymLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsBlockLocal_Language" Association="MundoMvc4BaseModel.FK_NewsBlockLocal_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="NewsBlockLocal" EntitySet="NewsBlockLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegionLocal_Language" Association="MundoMvc4BaseModel.FK_RegionLocal_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="RegionLocal" EntitySet="RegionLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsBlock_Region" Association="MundoMvc4BaseModel.FK_NewsBlock_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="NewsBlock" EntitySet="NewsBlocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsBlockLocal_NewsBlock" Association="MundoMvc4BaseModel.FK_NewsBlockLocal_NewsBlock">
+            <End Role="NewsBlock" EntitySet="NewsBlocks" />
+            <End Role="NewsBlockLocal" EntitySet="NewsBlockLocals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegionLocal_Region" Association="MundoMvc4BaseModel.FK_RegionLocal_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="RegionLocal" EntitySet="RegionLocals" />
+          </AssociationSet>
+          <EntitySet Name="RegionInfos" EntityType="MundoMvc4BaseModel.RegionInfo" />
+          <EntitySet Name="GroupInfos" EntityType="MundoMvc4BaseModel.GroupInfo" />
+          <AssociationSet Name="RegionInfoGroupInfo" Association="MundoMvc4BaseModel.RegionInfoGroupInfo">
+            <End Role="RegionInfo" EntitySet="RegionInfos" />
+            <End Role="GroupInfo" EntitySet="GroupInfos" />
+          </AssociationSet>
+          <EntitySet Name="GymInfos" EntityType="MundoMvc4BaseModel.GymInfo" />
+          <AssociationSet Name="GroupInfoGymInfo" Association="MundoMvc4BaseModel.GroupInfoGymInfo">
+            <End Role="GroupInfo" EntitySet="GroupInfos" />
+            <End Role="GymInfo" EntitySet="GymInfos" />
+          </AssociationSet>
+          <EntitySet Name="Sections" EntityType="MundoMvc4BaseModel.Section" />
+          <AssociationSet Name="FK_Section_Language" Association="MundoMvc4BaseModel.FK_Section_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Section" EntitySet="Sections" />
+          </AssociationSet>
+          <EntitySet Name="ScheduleInfoes" EntityType="MundoMvc4BaseModel.ScheduleInfo" />
+          <AssociationSet Name="GymInfoScheduleInfo" Association="MundoMvc4BaseModel.GymInfoScheduleInfo">
+            <End Role="GymInfo" EntitySet="GymInfos" />
+            <End Role="ScheduleInfo" EntitySet="ScheduleInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="GroupInfoScheduleInfo" Association="MundoMvc4BaseModel.GroupInfoScheduleInfo">
+            <End Role="GroupInfo" EntitySet="GroupInfos" />
+            <End Role="ScheduleInfo" EntitySet="ScheduleInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="RegionInfoScheduleInfo" Association="MundoMvc4BaseModel.RegionInfoScheduleInfo">
+            <End Role="RegionInfo" EntitySet="RegionInfos" />
+            <End Role="ScheduleInfo" EntitySet="ScheduleInfoes" />
+          </AssociationSet>
+          <EntitySet Name="Resources" EntityType="MundoMvc4BaseModel.Resource" />
+          <AssociationSet Name="FK_Resources_Language" Association="MundoMvc4BaseModel.FK_Resources_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Resource" EntitySet="Resources" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ArticleLocals" Relationship="MundoMvc4BaseModel.FK_ArticleLocal_Article" FromRole="Article" ToRole="ArticleLocal" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArticleLocal">
+          <Key>
+            <PropertyRef Name="ArticleId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="ArticleId" Type="Int32" Nullable="false" />
+          <Property Name="LocalId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Article" Relationship="MundoMvc4BaseModel.FK_ArticleLocal_Article" FromRole="ArticleLocal" ToRole="Article" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_ArticleLocal_Language" FromRole="ArticleLocal" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="IssueDate" Type="DateTime" />
+          <Property Name="IssueTime" Type="Time" />
+          <Property Name="IsRepeatable" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Region" Relationship="MundoMvc4BaseModel.FK_Event_Region" FromRole="Event" ToRole="Region" />
+          <NavigationProperty Name="EventLocals" Relationship="MundoMvc4BaseModel.FK_EventLocal_Event" FromRole="Event" ToRole="EventLocal" />
+        </EntityType>
+        <EntityType Name="EventLocal">
+          <Key>
+            <PropertyRef Name="EventId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="EventId" Type="Int32" Nullable="false" />
+          <Property Name="LocalId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Event" Relationship="MundoMvc4BaseModel.FK_EventLocal_Event" FromRole="EventLocal" ToRole="Event" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_EventLocal_Language" FromRole="EventLocal" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GroupLocals" Relationship="MundoMvc4BaseModel.FK_GroupLocal_Groups" FromRole="Group" ToRole="GroupLocal" />
+          <NavigationProperty Name="Region" Relationship="MundoMvc4BaseModel.FK_Groups_Region" FromRole="Group" ToRole="Region" />
+          <NavigationProperty Name="Gyms" Relationship="MundoMvc4BaseModel.FK_Gym_Group" FromRole="Group" ToRole="Gym" />
+        </EntityType>
+        <EntityType Name="GroupLocal">
+          <Key>
+            <PropertyRef Name="GroupId" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="LangId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Group" Relationship="MundoMvc4BaseModel.FK_GroupLocal_Groups" FromRole="GroupLocal" ToRole="Group" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_GroupLocal_Language" FromRole="GroupLocal" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Gym">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Group" Relationship="MundoMvc4BaseModel.FK_Gym_Group" FromRole="Gym" ToRole="Group" />
+          <NavigationProperty Name="GymLocals" Relationship="MundoMvc4BaseModel.FK_GymLocal_Gym" FromRole="Gym" ToRole="GymLocal" />
+          <NavigationProperty Name="Schedules" Relationship="MundoMvc4BaseModel.FK_Schedule_Gym" FromRole="Gym" ToRole="Schedule" />
+          <Property Type="String" Name="SubwayStation" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GymLocal">
+          <Key>
+            <PropertyRef Name="GymId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="GymId" Type="Int32" Nullable="false" />
+          <Property Name="LocalId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Gym" Relationship="MundoMvc4BaseModel.FK_GymLocal_Gym" FromRole="GymLocal" ToRole="Gym" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_GymLocal_Language" FromRole="GymLocal" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SysName" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ArticleLocals" Relationship="MundoMvc4BaseModel.FK_ArticleLocal_Language" FromRole="Language" ToRole="ArticleLocal" />
+          <NavigationProperty Name="EventLocals" Relationship="MundoMvc4BaseModel.FK_EventLocal_Language" FromRole="Language" ToRole="EventLocal" />
+          <NavigationProperty Name="GroupLocals" Relationship="MundoMvc4BaseModel.FK_GroupLocal_Language" FromRole="Language" ToRole="GroupLocal" />
+          <NavigationProperty Name="GymLocals" Relationship="MundoMvc4BaseModel.FK_GymLocal_Language" FromRole="Language" ToRole="GymLocal" />
+          <NavigationProperty Name="NewsBlockLocals" Relationship="MundoMvc4BaseModel.FK_NewsBlockLocal_Language" FromRole="Language" ToRole="NewsBlockLocal" />
+          <NavigationProperty Name="RegionLocals" Relationship="MundoMvc4BaseModel.FK_RegionLocal_Language" FromRole="Language" ToRole="RegionLocal" />
+          <NavigationProperty Name="Sections" Relationship="MundoMvc4BaseModel.FK_Section_Language" FromRole="Language" ToRole="Section" />
+          <NavigationProperty Name="Resources" Relationship="MundoMvc4BaseModel.FK_Resources_Language" FromRole="Language" ToRole="Resource" />
+        </EntityType>
+        <EntityType Name="NewsBlock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsGlobal" Type="Boolean" Nullable="false" />
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Region" Relationship="MundoMvc4BaseModel.FK_NewsBlock_Region" FromRole="NewsBlock" ToRole="Region" />
+          <NavigationProperty Name="NewsBlockLocals" Relationship="MundoMvc4BaseModel.FK_NewsBlockLocal_NewsBlock" FromRole="NewsBlock" ToRole="NewsBlockLocal" />
+          <Property Type="Boolean" Name="IsTop" Nullable="false" />
+          <Property Type="DateTime" Name="Posted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewsBlockLocal">
+          <Key>
+            <PropertyRef Name="NewsBlockId" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Name="NewsBlockId" Type="Int32" Nullable="false" />
+          <Property Name="LangId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_NewsBlockLocal_Language" FromRole="NewsBlockLocal" ToRole="Language" />
+          <NavigationProperty Name="NewsBlock" Relationship="MundoMvc4BaseModel.FK_NewsBlockLocal_NewsBlock" FromRole="NewsBlockLocal" ToRole="NewsBlock" />
+          <Property Type="String" Name="Summary" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SysName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Events" Relationship="MundoMvc4BaseModel.FK_Event_Region" FromRole="Region" ToRole="Event" />
+          <NavigationProperty Name="Groups" Relationship="MundoMvc4BaseModel.FK_Groups_Region" FromRole="Region" ToRole="Group" />
+          <NavigationProperty Name="NewsBlocks" Relationship="MundoMvc4BaseModel.FK_NewsBlock_Region" FromRole="Region" ToRole="NewsBlock" />
+          <NavigationProperty Name="RegionLocals" Relationship="MundoMvc4BaseModel.FK_RegionLocal_Region" FromRole="Region" ToRole="RegionLocal" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMail" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RegionLocal">
+          <Key>
+            <PropertyRef Name="RegionId" />
+            <PropertyRef Name="LocalId" />
+          </Key>
+          <Property Name="RegionId" Type="Int32" Nullable="false" />
+          <Property Name="LocalId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_RegionLocal_Language" FromRole="RegionLocal" ToRole="Language" />
+          <NavigationProperty Name="Region" Relationship="MundoMvc4BaseModel.FK_RegionLocal_Region" FromRole="RegionLocal" ToRole="Region" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="GymId" Type="Int32" Nullable="false" />
+          <Property Name="Day" Type="Int16" Nullable="false" />
+          <Property Name="Starts" Type="Time" Nullable="false" />
+          <Property Name="Ends" Type="Time" Nullable="false" />
+          <NavigationProperty Name="Gym" Relationship="MundoMvc4BaseModel.FK_Schedule_Gym" FromRole="Schedule" ToRole="Gym" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_ArticleLocal_Article">
+          <End Role="Article" Type="MundoMvc4BaseModel.Article" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ArticleLocal" Type="MundoMvc4BaseModel.ArticleLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Article">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArticleLocal">
+              <PropertyRef Name="ArticleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArticleLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ArticleLocal" Type="MundoMvc4BaseModel.ArticleLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArticleLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Event" Type="MundoMvc4BaseModel.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventLocal_Event">
+          <End Role="Event" Type="MundoMvc4BaseModel.Event" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EventLocal" Type="MundoMvc4BaseModel.EventLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventLocal">
+              <PropertyRef Name="EventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EventLocal" Type="MundoMvc4BaseModel.EventLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupLocal_Groups">
+          <End Role="Group" Type="MundoMvc4BaseModel.Group" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GroupLocal" Type="MundoMvc4BaseModel.GroupLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupLocal">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Group" Type="MundoMvc4BaseModel.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gym_Group">
+          <End Role="Group" Type="MundoMvc4BaseModel.Group" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gym" Type="MundoMvc4BaseModel.Gym" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gym">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GroupLocal" Type="MundoMvc4BaseModel.GroupLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupLocal">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GymLocal_Gym">
+          <End Role="Gym" Type="MundoMvc4BaseModel.Gym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GymLocal" Type="MundoMvc4BaseModel.GymLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GymLocal">
+              <PropertyRef Name="GymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Gym">
+          <End Role="Gym" Type="MundoMvc4BaseModel.Gym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Schedule" Type="MundoMvc4BaseModel.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="GymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GymLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GymLocal" Type="MundoMvc4BaseModel.GymLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GymLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsBlockLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsBlockLocal" Type="MundoMvc4BaseModel.NewsBlockLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsBlockLocal">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegionLocal_Language">
+          <End Role="Language" Type="MundoMvc4BaseModel.Language" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RegionLocal" Type="MundoMvc4BaseModel.RegionLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RegionLocal">
+              <PropertyRef Name="LocalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsBlock_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsBlock" Type="MundoMvc4BaseModel.NewsBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsBlock">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsBlockLocal_NewsBlock">
+          <End Role="NewsBlock" Type="MundoMvc4BaseModel.NewsBlock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsBlockLocal" Type="MundoMvc4BaseModel.NewsBlockLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsBlock">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsBlockLocal">
+              <PropertyRef Name="NewsBlockId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegionLocal_Region">
+          <End Role="Region" Type="MundoMvc4BaseModel.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RegionLocal" Type="MundoMvc4BaseModel.RegionLocal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RegionLocal">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RegionInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Local" />
+          </Key>
+          <Property Type="String" Name="SysName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Local" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GroupInfos" Relationship="MundoMvc4BaseModel.RegionInfoGroupInfo" FromRole="RegionInfo" ToRole="GroupInfo" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMail" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ScheduleInfoes" Relationship="MundoMvc4BaseModel.RegionInfoScheduleInfo" FromRole="RegionInfo" ToRole="ScheduleInfo" />
+          </EntityType>
+        <EntityType Name="GroupInfo">
+          <Key>
+            <PropertyRef Name="Local" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="SysName" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int32" Name="RegionId" Nullable="false" />
+          <Property Type="String" Name="Local" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RegionInfo" Relationship="MundoMvc4BaseModel.RegionInfoGroupInfo" FromRole="GroupInfo" ToRole="RegionInfo" />
+          <NavigationProperty Name="GymInfos" Relationship="MundoMvc4BaseModel.GroupInfoGymInfo" FromRole="GroupInfo" ToRole="GymInfo" />
+          <NavigationProperty Name="ScheduleInfoes" Relationship="MundoMvc4BaseModel.GroupInfoScheduleInfo" FromRole="GroupInfo" ToRole="ScheduleInfo" />
+        </EntityType>
+        <Association Name="RegionInfoGroupInfo">
+          <End Type="MundoMvc4BaseModel.RegionInfo" Role="RegionInfo" Multiplicity="1" />
+          <End Type="MundoMvc4BaseModel.GroupInfo" Role="GroupInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegionInfo">
+              <PropertyRef Name="Id" />
+              <PropertyRef Name="Local" />
+            </Principal>
+            <Dependent Role="GroupInfo">
+              <PropertyRef Name="RegionId" />
+              <PropertyRef Name="Local" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GymInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Local" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Local" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="SysName" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="GroupInfo" Relationship="MundoMvc4BaseModel.GroupInfoGymInfo" FromRole="GymInfo" ToRole="GroupInfo" />
+          <NavigationProperty Name="ScheduleInfoes" Relationship="MundoMvc4BaseModel.GymInfoScheduleInfo" FromRole="GymInfo" ToRole="ScheduleInfo" />
+        </EntityType>
+        <Association Name="GroupInfoGymInfo">
+          <End Type="MundoMvc4BaseModel.GroupInfo" Role="GroupInfo" Multiplicity="1" />
+          <End Type="MundoMvc4BaseModel.GymInfo" Role="GymInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupInfo">
+              <PropertyRef Name="Local" />
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GymInfo">
+              <PropertyRef Name="Local" />
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SysName" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Type="String" Name="SysName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="LangId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Usage" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_Section_Language" FromRole="Section" ToRole="Language" />
+        </EntityType>
+        <Association Name="FK_Section_Language">
+          <End Type="MundoMvc4BaseModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="MundoMvc4BaseModel.Section" Role="Section" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Section">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ScheduleInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Local" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="GymId" Nullable="false" />
+          <Property Type="Int16" Name="Day" Nullable="false" />
+          <Property Type="Time" Name="Starts" Nullable="false" />
+          <Property Type="Time" Name="Ends" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="String" Name="Local" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GymInfo" Relationship="MundoMvc4BaseModel.GymInfoScheduleInfo" FromRole="ScheduleInfo" ToRole="GymInfo" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <Property Type="Int32" Name="RegionId" Nullable="false" />
+          <NavigationProperty Name="GroupInfo" Relationship="MundoMvc4BaseModel.GroupInfoScheduleInfo" FromRole="ScheduleInfo" ToRole="GroupInfo" />
+          <NavigationProperty Name="RegionInfo" Relationship="MundoMvc4BaseModel.RegionInfoScheduleInfo" FromRole="ScheduleInfo" ToRole="RegionInfo" />
+        </EntityType>
+        <Association Name="GymInfoScheduleInfo">
+          <End Type="MundoMvc4BaseModel.GymInfo" Role="GymInfo" Multiplicity="1" />
+          <End Type="MundoMvc4BaseModel.ScheduleInfo" Role="ScheduleInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GymInfo">
+              <PropertyRef Name="Id" />
+              <PropertyRef Name="Local" />
+            </Principal>
+            <Dependent Role="ScheduleInfo">
+              <PropertyRef Name="GymId" />
+              <PropertyRef Name="Local" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GroupInfoScheduleInfo">
+          <End Type="MundoMvc4BaseModel.GroupInfo" Role="GroupInfo" Multiplicity="1" />
+          <End Type="MundoMvc4BaseModel.ScheduleInfo" Role="ScheduleInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupInfo">
+              <PropertyRef Name="Local" />
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ScheduleInfo">
+              <PropertyRef Name="Local" />
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RegionInfoScheduleInfo">
+          <End Type="MundoMvc4BaseModel.RegionInfo" Role="RegionInfo" Multiplicity="1" />
+          <End Type="MundoMvc4BaseModel.ScheduleInfo" Role="ScheduleInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegionInfo">
+              <PropertyRef Name="Id" />
+              <PropertyRef Name="Local" />
+            </Principal>
+            <Dependent Role="ScheduleInfo">
+              <PropertyRef Name="RegionId" />
+              <PropertyRef Name="Local" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="TypeName" />
+            <PropertyRef Name="Property" />
+            <PropertyRef Name="LangId" />
+          </Key>
+          <Property Type="String" Name="TypeName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Property" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="LangId" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Language" Relationship="MundoMvc4BaseModel.FK_Resources_Language" FromRole="Resource" ToRole="Language" />
+          <Property Type="Boolean" Name="IsSystem" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Resources_Language">
+          <End Type="MundoMvc4BaseModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="MundoMvc4BaseModel.Resource" Role="Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="LangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MundoMvc4BaseModelStoreContainer" CdmEntityContainer="MundoMvc4BaseEntities">
+          <EntitySetMapping Name="Articles"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Article"><MappingFragment StoreEntitySet="Article">
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="SysName" ColumnName="SysName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ArticleLocals"><EntityTypeMapping TypeName="MundoMvc4BaseModel.ArticleLocal"><MappingFragment StoreEntitySet="ArticleLocal">
+            <ScalarProperty Name="ArticleId" ColumnName="ArticleId" />
+            <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+            <ScalarProperty Name="Name" ColumnName="Title" />
+            <ScalarProperty Name="Body" ColumnName="Body" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Events"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Event"><MappingFragment StoreEntitySet="Event">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="SysName" ColumnName="SysName" />
+            <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+            <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+            <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+            <ScalarProperty Name="IsRepeatable" ColumnName="IsRepeatable" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EventLocals"><EntityTypeMapping TypeName="MundoMvc4BaseModel.EventLocal"><MappingFragment StoreEntitySet="EventLocal">
+            <ScalarProperty Name="EventId" ColumnName="EventId" />
+            <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+            <ScalarProperty Name="Name" ColumnName="Title" />
+            <ScalarProperty Name="Body" ColumnName="Body" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Groups"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Group"><MappingFragment StoreEntitySet="Group">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="SysName" ColumnName="SysName" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="GroupLocals"><EntityTypeMapping TypeName="MundoMvc4BaseModel.GroupLocal"><MappingFragment StoreEntitySet="GroupLocal">
+            <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+            <ScalarProperty Name="LangId" ColumnName="LangId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Body" ColumnName="Body" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Gyms"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Gym"><MappingFragment StoreEntitySet="Gym">
+            <ScalarProperty Name="SubwayStation" ColumnName="SubwayStation" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="SysName" ColumnName="SysName" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="GymLocals"><EntityTypeMapping TypeName="MundoMvc4BaseModel.GymLocal"><MappingFragment StoreEntitySet="GymLocal">
+            <ScalarProperty Name="GymId" ColumnName="GymId" />
+            <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Body" ColumnName="Body" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Languages"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Language"><MappingFragment StoreEntitySet="Language">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="SysName" ColumnName="SysName" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="NewsBlocks"><EntityTypeMapping TypeName="MundoMvc4BaseModel.NewsBlock"><MappingFragment StoreEntitySet="NewsBlock">
+            <ScalarProperty Name="Posted" ColumnName="Posted" />
+                <ScalarProperty Name="IsTop" ColumnName="IsTop" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="IsGlobal" ColumnName="IsGlobal" />
+            <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="NewsBlockLocals"><EntityTypeMapping TypeName="MundoMvc4BaseModel.NewsBlockLocal"><MappingFragment StoreEntitySet="NewsBlockLocal">
+            <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="NewsBlockId" ColumnName="NewsBlockId" />
+            <ScalarProperty Name="LangId" ColumnName="LangId" />
+            <ScalarProperty Name="Name" ColumnName="Title" />
+            <ScalarProperty Name="Body" ColumnName="Body" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Regions"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Region"><MappingFragment StoreEntitySet="Region">
+            <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="SysName" ColumnName="SysName" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RegionLocals"><EntityTypeMapping TypeName="MundoMvc4BaseModel.RegionLocal"><MappingFragment StoreEntitySet="RegionLocal">
+            <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+            <ScalarProperty Name="LocalId" ColumnName="LocalId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Body" ColumnName="Body" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Schedules"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Schedule"><MappingFragment StoreEntitySet="Schedule">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="GymId" ColumnName="GymId" />
+            <ScalarProperty Name="Day" ColumnName="Day" />
+            <ScalarProperty Name="Starts" ColumnName="Starts" />
+            <ScalarProperty Name="Ends" ColumnName="Ends" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RegionInfos">
+            <EntityTypeMapping TypeName="MundoMvc4BaseModel.RegionInfo">
+              <MappingFragment StoreEntitySet="RegionInfo">
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SysName" ColumnName="SysName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupInfos">
+            <EntityTypeMapping TypeName="MundoMvc4BaseModel.GroupInfo">
+              <MappingFragment StoreEntitySet="GroupInfo">
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SysName" ColumnName="SysName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GymInfos">
+            <EntityTypeMapping TypeName="MundoMvc4BaseModel.GymInfo">
+              <MappingFragment StoreEntitySet="GymInfo">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SysName" ColumnName="SysName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sections">
+            <EntityTypeMapping TypeName="MundoMvc4BaseModel.Section">
+              <MappingFragment StoreEntitySet="Section">
+                <ScalarProperty Name="Usage" ColumnName="Usage" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Name" ColumnName="Title" />
+                <ScalarProperty Name="LangId" ColumnName="LangId" />
+                <ScalarProperty Name="SysName" ColumnName="SysName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleInfoes">
+            <EntityTypeMapping TypeName="MundoMvc4BaseModel.ScheduleInfo">
+              <MappingFragment StoreEntitySet="ScheduleInfo">
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Ends" ColumnName="Ends" />
+                <ScalarProperty Name="Starts" ColumnName="Starts" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="GymId" ColumnName="GymId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="MundoMvc4BaseModel.Resource">
+              <MappingFragment StoreEntitySet="Resources">
+                <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="LangId" ColumnName="LangId" />
+                <ScalarProperty Name="Property" ColumnName="Property" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Domain">
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Article" Width="1.5" PointX="0.75" PointY="13.125" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.ArticleLocal" Width="1.5" PointX="8.75" PointY="12" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Event" Width="1.5" PointX="0.75" PointY="4.625" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.EventLocal" Width="1.5" PointX="6.875" PointY="8.25" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Group" Width="1.5" PointX="0.625" PointY="15.875" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.GroupLocal" Width="1.5" PointX="5.125" PointY="12" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Gym" Width="1.5" PointX="3" PointY="15.875" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.GymLocal" Width="1.5" PointX="3" PointY="12" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Language" Width="1.5" PointX="0.75" PointY="8.625" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.NewsBlock" Width="1.5" PointX="4.125" PointY="0.875" Height="2.5571907552083339" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.NewsBlockLocal" Width="1.5" PointX="8.5" PointY="8.25" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Region" Width="1.5" PointX="1.5" PointY="0.875" Height="2.3648893229166745" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.RegionLocal" Width="1.5" PointX="6.875" PointY="12" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Schedule" Width="1.5" PointX="5" PointY="15.875" Height="2.5571907552083353" IsExpanded="true" />
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_ArticleLocal_Article" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="9.5" PointY="14.574038958333334" />
+          <ConnectorPoint PointX="9.5" PointY="14.172587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_ArticleLocal_Language" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.722170975160255" />
+          <ConnectorPoint PointX="2.4098244349011213" PointY="11.881995410061375" />
+          <ConnectorPoint PointX="2.5276755650988791" PointY="11.999846540259133" />
+          <ConnectorPoint PointX="2.875" PointY="12.347170975160255" />
+          <ConnectorPoint PointX="2.875" PointY="11.5" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="11.5" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="11.5" />
+          <ConnectorPoint PointX="6.416666666666667" PointY="11.5" />
+          <ConnectorPoint PointX="6.583333333333333" PointY="11.5" />
+          <ConnectorPoint PointX="8.25" PointY="11.5" />
+          <ConnectorPoint PointX="8.75" PointY="12" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_Event_Region" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.875" PointY="3.2398893229166745" />
+          <ConnectorPoint PointX="1.875" PointY="4.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_EventLocal_Event" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.3744921875" />
+          <ConnectorPoint PointX="2.4098244349011213" PointY="7.53431662240112" />
+          <ConnectorPoint PointX="2.5276755650988791" PointY="7.6521677525988787" />
+          <ConnectorPoint PointX="2.625" PointY="7.7494921875" />
+          <ConnectorPoint PointX="6.416666666666667" PointY="7.7494921874999987" />
+          <ConnectorPoint PointX="6.583333333333333" PointY="7.7494921875" />
+          <ConnectorPoint PointX="7.4999995000000013" PointY="7.7494921875" />
+          <ConnectorPoint PointX="7.4999995000000013" PointY="8.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_EventLocal_Language" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.7715722363281241" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="8.7715722363281241" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="8.7715722363281241" />
+          <ConnectorPoint PointX="6.416666666666667" PointY="8.7715722363281241" />
+          <ConnectorPoint PointX="6.583333333333333" PointY="8.7715722363281241" />
+          <ConnectorPoint PointX="6.875" PointY="8.7715722363281241" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_GroupLocal_Groups" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.125" PointY="15.876152846153847" />
+          <ConnectorPoint PointX="2.5011528461538468" PointY="15.5" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="15.5" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="15.5" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="15.5" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="15.5" />
+          <ConnectorPoint PointX="5.875" PointY="15.5" />
+          <ConnectorPoint PointX="5.875" PointY="14.172587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_Groups_Region" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.46875" PointY="3.6244921875" />
+          <ConnectorPoint PointX="2.46875" PointY="16.649977057642229" />
+          <ConnectorPoint PointX="2.125" PointY="16.649977057642229" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_Gym_Group" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.125" PointY="17.089273584535256" />
+          <ConnectorPoint PointX="3" PointY="17.089273584535256" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_GroupLocal_Language" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.396393229166669" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="11.396393229166669" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="11.396393229166669" />
+          <ConnectorPoint PointX="5.875" PointY="11.396393229166669" />
+          <ConnectorPoint PointX="5.875" PointY="12" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_GymLocal_Gym" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="15.875" />
+          <ConnectorPoint PointX="3.75" PointY="14.172587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_Schedule_Gym" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.057444661458334" />
+          <ConnectorPoint PointX="5" PointY="17.057444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_GymLocal_Language" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2130769230769247" PointY="11.759095052083334" />
+          <ConnectorPoint PointX="2.4098244349011213" PointY="11.955842563907529" />
+          <ConnectorPoint PointX="2.5276755650988791" PointY="12.073693694105288" />
+          <ConnectorPoint PointX="2.78125" PointY="12.327268129006409" />
+          <ConnectorPoint PointX="2.78125" PointY="11.780097153846153" />
+          <ConnectorPoint PointX="2.8160744349011217" PointY="11.814921588747273" />
+          <ConnectorPoint PointX="2.9339255650988787" PointY="11.932772718945031" />
+          <ConnectorPoint PointX="3.0011528461538459" PointY="12" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_NewsBlockLocal_Language" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.5625" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="11.5625" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="11.5625" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="11.5625" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="11.5625" />
+          <ConnectorPoint PointX="8.2291666666666661" PointY="11.5625" />
+          <ConnectorPoint PointX="8.3958333333333339" PointY="11.5625" />
+          <ConnectorPoint PointX="9.25" PointY="11.5625" />
+          <ConnectorPoint PointX="9.25" PointY="10.614889322916666" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_RegionLocal_Language" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2500000000000013" PointY="11.759095052083334" />
+          <ConnectorPoint PointX="2.4098244349011213" PointY="11.918919486984452" />
+          <ConnectorPoint PointX="2.5276755650988791" PointY="12.03677061718221" />
+          <ConnectorPoint PointX="2.625" PointY="12.134095052083332" />
+          <ConnectorPoint PointX="2.625" PointY="11.625" />
+          <ConnectorPoint PointX="2.7916666666666665" PointY="11.625" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="11.625" />
+          <ConnectorPoint PointX="5.791666666666667" PointY="11.625" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="11.625" />
+          <ConnectorPoint PointX="6.4757692307692309" PointY="11.625" />
+          <ConnectorPoint PointX="6.875" PointY="12.024230769230769" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_NewsBlock_Region" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="2.1535953776041667" />
+          <ConnectorPoint PointX="4.125" PointY="2.1535953776041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_NewsBlockLocal_NewsBlock" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.625" PointY="2.1535953776041667" />
+          <ConnectorPoint PointX="6.6875" PointY="2.1535953776041667" />
+          <ConnectorPoint PointX="6.6875" PointY="4.5625" />
+          <ConnectorPoint PointX="9.6875" PointY="4.5625" />
+          <ConnectorPoint PointX="9.6875" PointY="8.15625" />
+          <ConnectorPoint PointX="9.25" PointY="8.15625" />
+          <ConnectorPoint PointX="9.25" PointY="8.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_RegionLocal_Region" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.0000000000000004" PointY="3.6244921875" />
+          <ConnectorPoint PointX="3.375" PointY="3.9994921874999996" />
+          <ConnectorPoint PointX="6.5" PointY="3.9994921874999996" />
+          <ConnectorPoint PointX="6.5" PointY="11.598462538461538" />
+          <ConnectorPoint PointX="6.9015374615384619" PointY="12" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.RegionInfo" Width="1.5" PointX="6.75" PointY="0.5" Height="2.9417936197916661" />
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.GroupInfo" Width="1.5" PointX="9.75" PointY="0.5" Height="2.7494921874999996" />
+        <AssociationConnector Association="MundoMvc4BaseModel.RegionInfoGroupInfo">
+          <ConnectorPoint PointX="8.25" PointY="2.7207698567708332" />
+          <ConnectorPoint PointX="9.75" PointY="2.7207698567708332" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.GymInfo" Width="1.5" PointX="10.125" PointY="4.125" Height="2.7494921874999996" />
+        <AssociationConnector Association="MundoMvc4BaseModel.GroupInfoGymInfo">
+          <ConnectorPoint PointX="10.6875" PointY="3.2494921875" />
+          <ConnectorPoint PointX="10.6875" PointY="4.125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Section" Width="1.5" PointX="10.125" PointY="8.25" Height="2.1725878906249996" />
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_Section_Language" >
+          <ConnectorPoint PointX="2.25" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="6.416666666666667" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="6.583333333333333" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="10.875" PointY="11.365140729166669" />
+          <ConnectorPoint PointX="10.875" PointY="10.422587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.ScheduleInfo" Width="1.5" PointX="8.125" PointY="4.625" Height="3.5186979166666656" />
+        <AssociationConnector Association="MundoMvc4BaseModel.GymInfoScheduleInfo">
+          <ConnectorPoint PointX="10.125" PointY="5.74974609375" />
+          <ConnectorPoint PointX="9.9895833333333339" PointY="5.7497460937499989" />
+          <ConnectorPoint PointX="9.8229166666666661" PointY="5.74974609375" />
+          <ConnectorPoint PointX="9.625" PointY="5.74974609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.GroupInfoScheduleInfo">
+          <ConnectorPoint PointX="9.90625" PointY="3.4417936197916665" />
+          <ConnectorPoint PointX="9.90625" PointY="7.5403450520833335" />
+          <ConnectorPoint PointX="9.625" PointY="7.5403450520833335" />
+        </AssociationConnector>
+        <AssociationConnector Association="MundoMvc4BaseModel.RegionInfoScheduleInfo">
+          <ConnectorPoint PointX="8.25" PointY="2.8181221809895769" />
+          <ConnectorPoint PointX="8.9687525" PointY="2.8181221809895769" />
+          <ConnectorPoint PointX="8.9687525" PointY="4.625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MundoMvc4BaseModel.Resource" Width="1.5" PointX="3" PointY="9.25" Height="1.9802864583333388" />
+        <AssociationConnector Association="MundoMvc4BaseModel.FK_Resources_Language" >
+          <ConnectorPoint PointX="2.25" PointY="10.240143229166669" />
+          <ConnectorPoint PointX="2.3854166666666665" PointY="10.240143229166669" />
+          <ConnectorPoint PointX="2.5520833333333335" PointY="10.240143229166669" />
+          <ConnectorPoint PointX="3" PointY="10.240143229166669" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

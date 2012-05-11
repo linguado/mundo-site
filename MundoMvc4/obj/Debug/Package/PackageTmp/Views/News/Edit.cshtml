@@ -1,0 +1,56 @@
+﻿@using MundoMvc4.Globalization
+@model MundoMvc4.DataLayer.NewsBlock
+
+@{
+    ViewBag.Title = GNews.EditTitle;
+}
+@section HeadSection
+{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"> </script>
+}
+
+<div class="edit-menu-box">
+    @Html.ActionLink(GActions.Details, "Details", new { argument = Model.Id })
+    @Html.ActionLink("ru-Ru", "EditLocal", new { argument = Model.Id, lng = "ru-Ru" })
+    @Html.ActionLink("en-US", "EditLocal", new { argument = Model.Id, lng = "en-US" })
+    @Html.ActionLink("pt-Br", "EditLocal", new { argument = Model.Id, lng = "pt-Br" })
+    @Html.ActionLink(GActions.Delete, "Delete", new { argument = Model.Id })
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Html.ActionLink("News Block", "Details", new { argument = Model.Id })</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsGlobal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsGlobal)
+            @Html.ValidationMessageFor(model => model.IsGlobal)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsTop)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsTop)
+            @Html.ValidationMessageFor(model => model.IsTop)
+        </div>
+
+        <p>
+            <input type="submit" value="@GActions.Save" />
+        </p>
+    </fieldset>
+}
+

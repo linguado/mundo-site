@@ -1,0 +1,24 @@
+﻿@using MundoMvc4.Common
+@using MundoMvc4.Globalization
+@model RegionInfo
+
+@{
+    ViewBag.Title = Model.Name;
+}
+<div class="edit-menu-box">
+    @Html.ActionLink(GRegions.LinkNews, "Index", "News", new { argument = Model.SysName }, null) |
+    @Html.ActionLink(GRegions.LinkGroups, "Index", "Groups", new { argument = Model.SysName }, null) |
+    @if (User.IsInRole(MundoRoles.REGIONAL))
+    {<text>
+         @Html.ActionLink(GActions.Edit, "Edit", "Regions", new {argument = Model.SysName}, null) [
+         @Html.ActionLink("ru-Ru", "EditLocal", new {argument = Model.SysName, lng = "ru-Ru"})
+         @Html.ActionLink("en-US", "EditLocal", new {argument = Model.SysName, lng = "en-US"})
+         @Html.ActionLink("pt-Br", "EditLocal", new {argument = Model.SysName, lng = "pt-Br"})]
+         @Html.ActionLink(GActions.Delete, "Delete", "Regions", new {argument = Model.SysName}, null)
+     </text>
+    }
+</div>
+
+<h3>@Model.Name</h3>
+@Html.Raw(Model.Body)
+

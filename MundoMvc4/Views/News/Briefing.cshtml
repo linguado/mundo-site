@@ -1,0 +1,9 @@
+﻿@model IEnumerable<NewsBlockLocal>
+
+@foreach (var item in Model) {
+    <section class="news-body" isTop="@item.NewsBlock.IsTop">
+        <a href="@Url.Action("Details",new{argument=item.NewsBlockId})">@item.Title</a><br/>
+        <span class="news-summary">@item.Summary</span>
+        <span class="news-date">@item.NewsBlock.Expires.ToString("MM-dd hh:mm")</span>
+    </section>
+}

@@ -1,0 +1,23 @@
+﻿@using MundoMvc4.Globalization
+@model MundoMvc4.Models.SideBarModel
+<section>
+    <header><a href="@Url.Action("Index", "News")" >@Master.LinkNews</a></header>
+    @foreach (var item in Model.GlobalNews) {
+        <section class="news-body" isTop="@item.NewsBlock.IsTop">
+            @Html.ActionLink(item.Name,"Details","News",new{argument=item.NewsBlockId},null)
+            <br/>
+            <span class="news-summary">@item.Summary</span>
+        </section>
+    }
+    <hr class="newsline" />
+    @foreach (var item in Model.RegionalNews) {
+        <section class="news-body" isTop="@item.NewsBlock.IsTop">
+            @Html.ActionLink(item.Name, "Details", "News", new { argument = item.NewsBlockId }, null)
+            <br/>
+            <span class="news-summary">@item.Summary</span>
+        </section>
+    }
+    <div style="display:hidden" id="mundo-video">
+        <iframe src="http://player.vimeo.com/video/16582219?byline=0&amp;portrait=0&amp;color=ffffff" width="220" height="141" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </div>
+</section>
