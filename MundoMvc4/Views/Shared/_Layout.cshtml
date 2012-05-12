@@ -64,46 +64,46 @@
                 <a href="@Url.Action("Index","Home")"><img alt="logo" height="100" src="@Url.Content("~/Images/Master/mundo_logo.png")"/></a>
                 <div id="master-citybox" class="selector">
                     <ul id="region-list">
-                    	<li id="city">@region.Name</li>
+                        <li id="city">@region.Name</li>
                         @foreach (var reg in regions)
                         {
-                        	if(@reg.SysName != @region.SysName)
-                        	{
-                            <li id="city" class="sub">
-                                @Html.ActionLink(reg.Name, "Index", "Home", new { userRegion = region.SysName }, null)
-                            </li>
-                          	}
+                            if(@reg.SysName != @region.SysName)
+                            {
+                                <li id="city" class="sub">
+                                    @Html.ActionLink(reg.Name, "Index", "Home", new { userRegion = region.SysName }, null)
+                                </li>
+                            }
                         }
                     </ul>
                 </div>
             </div> 
             <nav id="topNav">
                 <ul>
-	                <li >
-	                    <a href="@Url.Action("Details", "Articles", new { argument = "capoeira_main" })" title="Nav Link 1">@Html.Resource("Menu","Capoeira")</a>
-	                    <ul>
-	                        <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_main" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraAbout")</a></li>
-	                        <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_history" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraHistory")</a></li>
-	                        <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_music" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraMusic")</a></li>
-	                        <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_mundo" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraOurSchool")</a></li>
-	                        <li class="last">
-	                            <a href="@Url.Action("Details", "Articles", new { argument = "capoeira_mestres" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraMestres")</a>
-	                        </li>
-	                    </ul> 
-	                </li>
-	                <li style="min-width: 145px;">
-	                    <a href="#" title="Nav Link 1">@Html.Resource("Menu","Classes")</a>
-	                    <ul>
-	                        <li><a href="@Url.Action("Details", "Articles", new { argument = "classes_about" })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesAbout")</a></li>
-	                        <li><a href="@Url.Action("ForRegion", "Schedule", new { argument = region.SysName })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesSchedule")</a></li>
-	                        <li><a href="@Url.Action("Index", "Groups", new { argument = region.SysName })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesTutors")</a>
-	                        </li>
-	                        <li><a href="@Url.Action("Details", "Articles", new { argument = "classes_levels" })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesGradations")</a></li>
-	                        <li class="last">
-	                            <a href="#" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesFAQ")</a>
-	                        </li>
-	                    </ul> 
-	                </li>
+                    <li >
+                        <a href="@Url.Action("Details", "Articles", new { argument = "capoeira_main" })" title="Nav Link 1">@Html.Resource("Menu","Capoeira")</a>
+                        <ul>
+                            <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_main" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraAbout")</a></li>
+                            <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_history" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraHistory")</a></li>
+                            <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_music" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraMusic")</a></li>
+                            <li><a href="@Url.Action("Details", "Articles", new { argument = "capoeira_mundo" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraOurSchool")</a></li>
+                            <li class="last">
+                                <a href="@Url.Action("Details", "Articles", new { argument = "capoeira_mestres" })" title="@Html.Resource("Menu","Capoeira")">@Html.Resource("Menu","CapoeiraMestres")</a>
+                            </li>
+                        </ul> 
+                    </li>
+                    <li style="min-width: 145px;">
+                        <a href="#" title="Nav Link 1">@Html.Resource("Menu","Classes")</a>
+                        <ul>
+                            <li><a href="@Url.Action("Details", "Articles", new { argument = "classes_about" })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesAbout")</a></li>
+                            <li><a href="@Url.Action("ForRegion", "Schedule", new { argument = region.SysName })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesSchedule")</a></li>
+                            <li><a href="@Url.Action("Index", "Groups", new { argument = region.SysName })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesTutors")</a>
+                            </li>
+                            <li><a href="@Url.Action("Details", "Articles", new { argument = "classes_levels" })" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesGradations")</a></li>
+                            <li class="last">
+                                <a href="#" title="@Html.Resource("Menu","Classes")">@Html.Resource("Menu","ClassesFAQ")</a>
+                            </li>
+                        </ul> 
+                    </li>
                     <li>
                         <a href="#" title="Nav Link 1">@Html.Resource("Menu","Resources")</a>
                         <ul>
@@ -119,26 +119,21 @@
                         </ul> 
                     </li>
                     <li><a href="@Url.Action("Details", "Articles", new { argument = "show" })" title="@Html.Resource("Menu","ShowGroup")">@Html.Resource("Menu","ShowGroup")</a></li>
-	                <li>
-	                    <a href="#" title="Nav Link 1">@Html.Resource("Menu","Events")</a>
-	                    <ul>
-	                        <li><a href="#" title="@Html.Resource("Menu","Events")">@Html.Resource("Menu","EventsCalendar")</a></li>
-	                        <li><a href="@Url.Action("Index", "News", new { argument = region.SysName })" title="@Html.Resource("Menu","Events")">@Html.Resource("Menu","EventsNews")</a></li>
-	                        <li class="last">
-	                            <a href="#" title="@Html.Resource("Menu","Events")">@Html.Resource("Menu","EventsArchive")</a>
-	                        </li>
-	                    </ul> 
-	                </li>
+                    <li>
+                        <a href="#" title="Nav Link 1">@Html.Resource("Menu","Events")</a>
+                        <ul>
+                            <li><a href="#" title="@Html.Resource("Menu","Events")">@Html.Resource("Menu","EventsCalendar")</a></li>
+                            <li><a href="@Url.Action("Index", "News", new { argument = region.SysName })" title="@Html.Resource("Menu","Events")">@Html.Resource("Menu","EventsNews")</a></li>
+                            <li class="last">
+                                <a href="#" title="@Html.Resource("Menu","Events")">@Html.Resource("Menu","EventsArchive")</a>
+                            </li>
+                        </ul> 
+                    </li>
                 </ul>
             </nav>
         </header>
-        <aside id="master-sidebar" >
-            @Html.Action("SideBar", "Home")
-        </aside>
-        <!--<div>lsdkfjlsdjf/lsdkjfsldkjf/sldjfsldkjf</div>-->
-        <section id="master-content">
-            @RenderBody()
-        </section>
+        @RenderBody()
+        
         <div id="content-background"></div>
         <footer id="master-footer">
             <div id="footer-social">

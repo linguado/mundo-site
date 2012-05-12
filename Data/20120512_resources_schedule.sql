@@ -1,0 +1,13 @@
+INSERT INTO [dbo].[Resources] ([TypeName],[Property],[LangId],[Value],[IsSystem]) 
+	VALUES ('GSchedule','TitleRegions',1,'Расписание',1)
+INSERT INTO [dbo].[Resources] ([TypeName],[Property],[LangId],[Value],[IsSystem]) 
+	VALUES ('GSchedule','TitleRegions',2,'Schedule',1)
+INSERT INTO [dbo].[Resources] ([TypeName],[Property],[LangId],[Value],[IsSystem]) 
+	VALUES ('GSchedule','TitleRegions',3,'Schedule',1)
+
+INSERT INTO [dbo].[Resources] ([TypeName],[Property],[LangId],[Value],[IsSystem]) 
+	VALUES ('GSchedule','LabelSelect',1,'Отобрать занятия по:',1)
+INSERT INTO [dbo].[Resources] ([TypeName],[Property],[LangId],[Value],[IsSystem]) 
+	VALUES ('GSchedule','LabelSelect',2,'Select classes',1)
+INSERT INTO [dbo].[Resources] ([TypeName],[Property],[LangId],[Value],[IsSystem]) 
+	VALUES ('GSchedule','LabelSelect',3,'Schedule',1)

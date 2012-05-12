@@ -76,8 +76,5 @@ namespace MundoMvc4.DataLayer
     }
     public class GymMetadata:SystemEntityMetadata
     {
-        [Required(ErrorMessageResourceType = typeof(GMetadata), ErrorMessageResourceName = "Required")]
-        [Display(ResourceType = typeof(GGyms), Name = "SubwayStation")]
-        public string SubwayStation { get; set; }
     }
 }

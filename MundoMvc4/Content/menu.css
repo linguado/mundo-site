@@ -36,6 +36,7 @@ nav li
     position: relative;
     color: #fff;
     padding: 0px 5px 0px 0px;
+    z-index: 999;
 }
 nav li:last-child{
 	padding: 0px;

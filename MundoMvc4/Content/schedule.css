@@ -1,0 +1,142 @@
+#schedule{
+	width: 1000px;
+	height: 100%;
+}
+
+div#schedule-filter{
+	margin-left: 350px;
+	margin-top: -25px;
+	width:100%;
+	margin-bottom: 25px;
+}
+
+#schedule thead th{
+	background-color: #3C3C3E;
+	color: #FFF;
+	font-style: italic;
+	font-size: 12pt;
+	text-transform: uppercase;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+#schedule thead th.empty{
+	background: none;
+}
+
+#schedule tbody td{
+	width: 100px;
+	border-right: 1px solid #000;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	vertical-align: top;
+}
+#schedule tbody tr {
+    border-bottom: black double medium;
+    visibility: visible;
+    border-collapse: separate;
+    display: table-row;
+
+}
+#schedule tbody td.empty{
+	border: none;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	width: 70px;
+	vertical-align: middle;
+}
+
+#schedule tbody td hr{
+	border: none;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	border-bottom: 3px double #000;
+}
+
+#schedule tbody td.highlite{
+	background-color: #fff;
+}
+
+span#schedtime{
+	background-color: #3C3C3E;
+	color: #fff;
+	font-size: 14pt;
+	font-style: italic;
+	padding: 3px;
+}
+
+span#schedh{
+	font-weight: bolder;
+	font-size: 13pt;
+}
+
+a#schedl{
+	color: #000;
+	text-decoration: none;
+	font-size:9pt;
+	font-style: italic;
+}
+
+div#filter-caption{
+	float: left;
+	font-size: 9pt;
+	height:14px;
+	line-height: 12px;
+	margin-right: 20px;
+}
+
+.filterselector{
+	float: left;
+    margin: 0px;
+    position: relative;
+    width: 115px;
+    padding-right: 14px;
+    margin-right: 20px;
+    height:14px;
+    font: 12px Arial, Tahoma, Helvetica, Verdana;
+    line-height: 12px;
+    cursor: pointer;
+    background-image: url(../Images/Master/selector.png);
+    background-repeat: no-repeat;
+    background-position:right;
+	zoom: 1;
+}
+.filterselector.clicked{
+	background-image: url(../Images/Master/selector-hover.png);
+	background-repeat: no-repeat;
+}
+.filterselector ul {
+    display: block;
+    padding-left: 0px;
+    margin:0px;
+}
+.filterselector ul li {
+    list-style: none;
+	vertical-align: top;
+	display: block;
+	background-color: white;
+	width: 110px;
+	line-height: 14px;
+	font-size: 11px;
+	font-family: Tahoma;
+	font-weight: normal;
+	text-align:center;
+	margin: 0px;
+}
+.filterselector ul li.sub {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width: 110px;
+	color: white;
+	background-color: #9E9FA3;
+}
+.filterselector ul li a{
+	text-decoration: none;
+}
+.filterselector ul li.sub a{
+	color:#fff;
+}

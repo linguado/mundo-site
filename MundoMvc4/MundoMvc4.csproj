@@ -21,6 +21,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -110,6 +114,7 @@
   <ItemGroup>
     <Content Include="App_Code\CalendarHelper.cs" />
     <Content Include="App_Code\ResourceHelper.cs" />
+    <Content Include="App_Code\ScheduleTime.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
@@ -150,6 +155,10 @@
     <Content Include="Content\ie7.css" />
     <Content Include="Content\menu.css" />
     <Content Include="Content\page_home.css" />
+    <Content Include="Content\schedule.css" />
+    <Content Include="Images\bg_bottom_middle.png" />
+    <Content Include="Images\Master\capo-overlay.png" />
+    <Content Include="Images\Master\mundo_logo.1.png" />
     <Content Include="Images\Master\selector-hover.png" />
     <Content Include="Images\Master\selector.png" />
     <Content Include="Images\SecurityGuard\blue_ico.png" />
@@ -167,6 +176,7 @@
     <Content Include="Images\SecurityGuard\yellow_ico.png" />
     <Content Include="Images\SecurityGuard\yellow_message.gif" />
     <Content Include="Content\sg_pagination.css" />
+    <Content Include="schedule.html" />
     <Content Include="Scripts\jquery.jqia.selects.js" />
     <Content Include="Content\sg_main.css" />
     <Content Include="Content\Site.css" />

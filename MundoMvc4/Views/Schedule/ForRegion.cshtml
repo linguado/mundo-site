@@ -2,59 +2,94 @@
 @model IEnumerable<ScheduleInfo>
 
 @{
-    ViewBag.Title = "For Region";
-    Dictionary<DayOfWeek,String> days;
-    var result = CalendarHelper.PrepareRegional(Model,out days);
+    ViewBag.Title = Html.Resource("GSchedule", "TitleRegions");
+    var schedule = ScheduleTime.Convert(Model);
 }
 @section HeadSection
 {
-    <style type="text/css">
-        .schedule {
-            width: inherit;
-            clear: left;
-        }
-        .schedule tr   
-        {
-        }
-        .schedule tr td 
-        {
-            margin: 0px; 
-        }
-    </style>
+    <link href="@Url.Content("~/Content/schedule.css")" rel="stylesheet" type="text/css">
 }
-<table class="schedule">
-    <tr>
-        <th></th>
-        @foreach (var day in days.Values)
+<h1>@Html.Resource("GSchedule", "TitleRegions")</h1>
+<div id="schedule-filter">
+    <div id="filter-caption">@Html.Resource("GSchedule","LabelSelect")</div>
+    <div id="master-teacherbox" class="filterselector">
+        <ul id="hidden-list">
+            <li>преподавателю</li>
+            <li class="sub"><a href="/">graduado Axe</a></li>
+            <li class="sub"><a href="/">graduado Cantor</a></li>
+            <li class="sub"><a href="/">graduado Linguado</a></li>
+            <li class="sub"><a href="/">graduado Violino</a></li>
+        </ul>
+    </div>
+    <div id="master-agebox" class="filterselector">
+        <ul id="hidden-list">
+            <li>возрасту группы</li>
+            <li class="sub"><a href="/">взрослые</a></li>
+            <li class="sub"><a href="/">дети/подростки</a></li>
+        </ul>
+    </div>
+    <div id="master-placebox" class="filterselector">
+        <ul id="hidden-list">
+            <li>станции метро</li>
+            <li class="sub"><a href="/">Восстания</a></li>
+            <li class="sub"><a href="/">Елизаровская</a></li>
+            <li class="sub"><a href="/">Политехническая</a></li>
+        </ul>
+    </div>
+</div>
+<table id="schedule">
+    <thead>
+        <tr>
+            <th class="empty"></th>
+            <th>@Html.Resource("GSchedule","Mo")</th>
+            <th>@Html.Resource("GSchedule","Tu")</th>
+            <th>@Html.Resource("GSchedule","We")</th>
+            <th>@Html.Resource("GSchedule","Th")</th>
+            <th>@Html.Resource("GSchedule","Fr")</th>
+            <th>@Html.Resource("GSchedule","Sa")</th>
+            <th>@Html.Resource("GSchedule","Su")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in schedule)
         {
-            <th>@day</th>
+            <tr >
+                <td colspan="8"><hr /></td>
+            </tr>
+            <tr>
+                <td>
+                    <span id="schedtime">@String.Format("{0:hh\\:mm}",@item.Time)</span>
+                </td>
+                <td>
+                    @TimeDayRenderer(item,DayOfWeek.Monday)
+                </td>
+                <td>
+                    @TimeDayRenderer(item,DayOfWeek.Tuesday)
+                </td>
+                <td>
+                    @TimeDayRenderer(item,DayOfWeek.Wednesday)
+                </td>
+                <td>
+                    @TimeDayRenderer(item,DayOfWeek.Thursday)
+                </td>
+                <td>
+                    @TimeDayRenderer(item,DayOfWeek.Friday)
+                </td>
+                <td>
+                    @TimeDayRenderer(item,DayOfWeek.Saturday)
+                </td>
+                <td>
+                    @TimeDayRenderer(item,DayOfWeek.Sunday)
+                </td>
+            </tr>
         }
-    </tr>
-
-@foreach (var item in result)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Time)
-        </td>
-        @foreach (var day in days.Keys)
-        {
-            <td>@DayRenderer(item.GetItem(day))</td>
-        }
-    </tr>
-}
+    </tbody>
 </table>
-@helper DayRenderer(IEnumerable<ScheduleInfo> items)
+@helper TimeDayRenderer(ScheduleTime item, DayOfWeek day)
+{
+    foreach(var gym in item.GetGymsForDay(day) )
     {
-        if(items!=null)
-        {
-            <ol style="margin: 0">
-                @foreach (var item in items)
-                {
-                    <li style="margin: 0;">
-                        @Html.ActionLink(item.GymInfo.Name, "Details", "Gyms", new {argument = item.GymInfo.SysName}, null)
-                    </li>
-                }
-            </ol>
-        }
+        <span id="schedh">@Html.ActionLink(gym.Name,"Details","Gyms",new{argument=gym.SysName},null) </span><br />
+        <span >@Html.ActionLink(gym.GroupInfo.Name,"Details","Groups",new{argument=gym.GroupInfo.SysName},null) </span><br />
+    }
 }

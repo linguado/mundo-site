@@ -214,7 +214,6 @@
           <Property Name="SysName" Type="varchar" Nullable="false" MaxLength="16" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="GroupId" Type="int" Nullable="false" />
-          <Property Name="SubwayStation" Type="nvarchar" Nullable="false" MaxLength="32" />
         </EntityType>
         <EntityType Name="GymLocal">
           <Key>
@@ -796,7 +795,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SysName" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="SysName" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="ArticleLocals" Relationship="MundoMvc4BaseModel.FK_ArticleLocal_Article" FromRole="Article" ToRole="ArticleLocal" />
           <Property Type="Boolean" Name="IsActive" Nullable="false" />
         </EntityType>
@@ -819,8 +818,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SysName" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
           <Property Name="RegionId" Type="Int32" Nullable="false" />
-          <Property Name="IssueDate" Type="DateTime" />
-          <Property Name="IssueTime" Type="Time" />
+          <Property Name="IssueDate" Type="DateTime" Precision="0" />
+          <Property Name="IssueTime" Type="Time" Precision="7" />
           <Property Name="IsRepeatable" Type="Boolean" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Region" Relationship="MundoMvc4BaseModel.FK_Event_Region" FromRole="Event" ToRole="Region" />
@@ -873,7 +872,6 @@
           <NavigationProperty Name="Group" Relationship="MundoMvc4BaseModel.FK_Gym_Group" FromRole="Gym" ToRole="Group" />
           <NavigationProperty Name="GymLocals" Relationship="MundoMvc4BaseModel.FK_GymLocal_Gym" FromRole="Gym" ToRole="GymLocal" />
           <NavigationProperty Name="Schedules" Relationship="MundoMvc4BaseModel.FK_Schedule_Gym" FromRole="Gym" ToRole="Schedule" />
-          <Property Type="String" Name="SubwayStation" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GymLocal">
           <Key>
@@ -914,7 +912,7 @@
           <NavigationProperty Name="Region" Relationship="MundoMvc4BaseModel.FK_NewsBlock_Region" FromRole="NewsBlock" ToRole="Region" />
           <NavigationProperty Name="NewsBlockLocals" Relationship="MundoMvc4BaseModel.FK_NewsBlockLocal_NewsBlock" FromRole="NewsBlock" ToRole="NewsBlockLocal" />
           <Property Type="Boolean" Name="IsTop" Nullable="false" />
-          <Property Type="DateTime" Name="Posted" Nullable="false" />
+          <Property Type="DateTime" Name="Posted" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="NewsBlockLocal">
           <Key>
@@ -961,8 +959,8 @@
           </Key>
           <Property Name="GymId" Type="Int32" Nullable="false" />
           <Property Name="Day" Type="Int16" Nullable="false" />
-          <Property Name="Starts" Type="Time" Nullable="false" />
-          <Property Name="Ends" Type="Time" Nullable="false" />
+          <Property Name="Starts" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Ends" Type="Time" Nullable="false" Precision="7" />
           <NavigationProperty Name="Gym" Relationship="MundoMvc4BaseModel.FK_Schedule_Gym" FromRole="Schedule" ToRole="Gym" />
           <Property Type="Boolean" Name="IsActive" Nullable="false" />
           <Property Type="Decimal" Name="Price" Nullable="false" Precision="12" Scale="2" />
@@ -1211,12 +1209,12 @@
             <PropertyRef Name="Id" />
             <PropertyRef Name="Local" />
           </Key>
-          <Property Type="String" Name="SysName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SysName" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="IsActive" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Local" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Local" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="GroupInfos" Relationship="MundoMvc4BaseModel.RegionInfoGroupInfo" FromRole="RegionInfo" ToRole="GroupInfo" />
           <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="EMail" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
@@ -1231,7 +1229,7 @@
           <Property Type="String" Name="SysName" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="IsActive" Nullable="false" />
           <Property Type="Int32" Name="RegionId" Nullable="false" />
-          <Property Type="String" Name="Local" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Local" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="RegionInfo" Relationship="MundoMvc4BaseModel.RegionInfoGroupInfo" FromRole="GroupInfo" ToRole="RegionInfo" />
@@ -1313,8 +1311,8 @@
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="Int32" Name="GymId" Nullable="false" />
           <Property Type="Int16" Name="Day" Nullable="false" />
-          <Property Type="Time" Name="Starts" Nullable="false" />
-          <Property Type="Time" Name="Ends" Nullable="false" />
+          <Property Type="Time" Name="Starts" Nullable="false" Precision="7" />
+          <Property Type="Time" Name="Ends" Nullable="false" Precision="7" />
           <Property Type="Boolean" Name="IsActive" Nullable="false" />
           <Property Type="Decimal" Name="Price" Nullable="false" Precision="12" Scale="2" />
           <Property Type="String" Name="Local" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
@@ -1436,7 +1434,6 @@
             <ScalarProperty Name="Body" ColumnName="Body" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Gyms"><EntityTypeMapping TypeName="MundoMvc4BaseModel.Gym"><MappingFragment StoreEntitySet="Gym">
-            <ScalarProperty Name="SubwayStation" ColumnName="SubwayStation" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
             <ScalarProperty Name="SysName" ColumnName="SysName" />
             <ScalarProperty Name="IsActive" ColumnName="IsActive" />

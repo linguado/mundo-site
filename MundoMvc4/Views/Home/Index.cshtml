@@ -7,7 +7,11 @@
 {
     <link type="text/css" href="@Url.Content("~/Content/page_home.css")" rel="stylesheet"/>
 }
-<div id="content">
+
+<div id="master-sidebar">
+    @Html.Action("SideBar", "Home")
+</div>
+<div id="content" style="width:760px; display:inline">
     <section id="capo-article">
         <h2 id="capo-head">@Html.ActionLink(Model.Capoeira.Name, "Details", "Articles", new { argument = "capoeira_main" }, null) &mdash; </h2>
         <p>@Model.Capoeira.Body</p>

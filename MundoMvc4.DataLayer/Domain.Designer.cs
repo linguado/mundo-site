@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -414,6 +415,7 @@ namespace MundoMvc4.DataLayer
         private ObjectSet<Resource> _Resources;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -577,11 +579,11 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -610,6 +612,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -688,6 +691,7 @@ namespace MundoMvc4.DataLayer
         partial void OnIsActiveChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -714,6 +718,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -744,6 +749,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -849,6 +855,7 @@ namespace MundoMvc4.DataLayer
         partial void OnBodyChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -929,6 +936,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -961,6 +969,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1135,6 +1144,7 @@ namespace MundoMvc4.DataLayer
         partial void OnIsActiveChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1199,6 +1209,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1229,6 +1240,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1334,6 +1346,7 @@ namespace MundoMvc4.DataLayer
         partial void OnBodyChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1414,6 +1427,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1444,6 +1458,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1546,6 +1561,7 @@ namespace MundoMvc4.DataLayer
         partial void OnRegionIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1632,6 +1648,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1668,6 +1685,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1845,6 +1863,7 @@ namespace MundoMvc4.DataLayer
         partial void OnBodyChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1931,6 +1950,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1961,6 +1981,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2066,6 +2087,7 @@ namespace MundoMvc4.DataLayer
         partial void OnBodyChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2146,6 +2168,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2165,19 +2188,18 @@ namespace MundoMvc4.DataLayer
         /// <param name="sysName">Initial value of the SysName property.</param>
         /// <param name="isActive">Initial value of the IsActive property.</param>
         /// <param name="groupId">Initial value of the GroupId property.</param>
-        /// <param name="subwayStation">Initial value of the SubwayStation property.</param>
-        public static Gym CreateGym(global::System.Int32 id, global::System.String sysName, global::System.Boolean isActive, global::System.Int32 groupId, global::System.String subwayStation)
+        public static Gym CreateGym(global::System.Int32 id, global::System.String sysName, global::System.Boolean isActive, global::System.Int32 groupId)
         {
             Gym gym = new Gym();
             gym.Id = id;
             gym.SysName = sysName;
             gym.IsActive = isActive;
             gym.GroupId = groupId;
-            gym.SubwayStation = subwayStation;
             return gym;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2278,32 +2300,9 @@ namespace MundoMvc4.DataLayer
         private global::System.Int32 _GroupId;
         partial void OnGroupIdChanging(global::System.Int32 value);
         partial void OnGroupIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String SubwayStation
-        {
-            get
-            {
-                return _SubwayStation;
-            }
-            set
-            {
-                OnSubwayStationChanging(value);
-                ReportPropertyChanging("SubwayStation");
-                _SubwayStation = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("SubwayStation");
-                OnSubwayStationChanged();
-            }
-        }
-        private global::System.String _SubwayStation;
-        partial void OnSubwayStationChanging(global::System.String value);
-        partial void OnSubwayStationChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2390,6 +2389,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2426,6 +2426,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2603,6 +2604,7 @@ namespace MundoMvc4.DataLayer
         partial void OnGroupIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2667,6 +2669,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2697,6 +2700,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2802,6 +2806,7 @@ namespace MundoMvc4.DataLayer
         partial void OnBodyChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2882,6 +2887,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2910,6 +2916,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2988,6 +2995,7 @@ namespace MundoMvc4.DataLayer
         partial void OnNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3168,6 +3176,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3202,6 +3211,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3352,6 +3362,7 @@ namespace MundoMvc4.DataLayer
         partial void OnPostedChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3416,6 +3427,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3448,6 +3460,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3577,6 +3590,7 @@ namespace MundoMvc4.DataLayer
         partial void OnSummaryChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3657,6 +3671,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3689,6 +3704,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3815,6 +3831,7 @@ namespace MundoMvc4.DataLayer
         partial void OnEMailChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3907,6 +3924,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3945,6 +3963,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4146,6 +4165,7 @@ namespace MundoMvc4.DataLayer
         partial void OnEMailChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4194,6 +4214,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4224,6 +4245,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4329,6 +4351,7 @@ namespace MundoMvc4.DataLayer
         partial void OnBodyChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4409,6 +4432,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4441,6 +4465,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4573,6 +4598,7 @@ namespace MundoMvc4.DataLayer
         partial void OnIsSystemChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4615,6 +4641,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4651,6 +4678,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4825,6 +4853,7 @@ namespace MundoMvc4.DataLayer
         partial void OnIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4867,6 +4896,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4909,6 +4939,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5158,6 +5189,7 @@ namespace MundoMvc4.DataLayer
         partial void OnRegionIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5276,6 +5308,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5308,6 +5341,7 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5437,6 +5471,7 @@ namespace MundoMvc4.DataLayer
         partial void OnUsageChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5479,8 +5514,10 @@ namespace MundoMvc4.DataLayer
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }

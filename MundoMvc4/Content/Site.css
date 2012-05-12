@@ -23,6 +23,7 @@ body
     margin-right: auto;
     width: 1000px;
     height: 100%;
+    min-height: 700px;
 }
 header, footer {
     margin: 0 0 0 0;
@@ -53,19 +54,22 @@ h4, h5, h6 {
     padding-bottom: 0;
 }
 
-section#master-content h1 {
+h1 {
 	color: black;
 	font-weight: normal;
-	margin-bottom: 0px;
+	margin-bottom: 25px;
+	margin-top: 25px;
 	display: block;
 	font-size: 2em;
 }
 
-section#master-content h2 {
+h2 {
     font-size: 1.5em;
-	display: inline;
+	display: inline-block;
 	font-weight: normal;
 	font-style: italic;
+	margin-top: 10px;
+	margin-bottom: -5px;
 	border-bottom: 1px solid #6B6B6C;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
@@ -75,6 +79,30 @@ section#master-content h2 {
 
 h3 {
     font-size: 1.2em;
+}
+
+h3.faq-question {
+	display: block;
+	font-weight: normal;
+	font-size: 1.0em;
+	width: 300px;
+	font-style: italic;
+	background-color: #E9E9EC;
+	padding: 10px;
+	-moz-border-radius: 15px;
+  	border-radius: 15px;
+}
+
+p.faq-answer {
+	position: relative;
+	display: block;
+	width: 400px;
+	left: 330px;
+	background-color: #E5E5FD;
+	padding: 10px;
+	-moz-border-radius: 15px;
+  	border-radius: 15px;
+  	margin-bottom: 20px;
 }
 
 h4 {
@@ -112,7 +140,7 @@ hr.newsline
 #master-logobox {
     text-align: left;
     float: left;
-    height: 100px;
+    height: 95px;
     width: 230px;
 }
 #master-logobox img:hover {
@@ -209,6 +237,13 @@ hr.newsline
     clear: left;
     display: block;
 }
+#master-superbox div#admin{
+	display: inline;
+}
+#master-superbox div#admin a{
+    color: #EC3300;
+}
+
 #master-superbox a img:hover{
     opacity: 0.75;
 }
@@ -218,16 +253,7 @@ hr.newsline
     background: #1620d6;
     color: white;
 }   
-       
-/* content panel*/
-#master-content {
-    width: 765px;
-    margin: 0;
-    display: block;
-    padding-left: 3px;
-    min-height: 605px;
-}
-
+      
 /* footer style*/ 
 footer,header {    
 }        
@@ -250,6 +276,10 @@ footer,header {
     font-size: 10px;
     width: 200px;
     text-align: left;
+}
+#footer-copyrights a 
+{
+    color: #909090;
 }
 #footer-contacts {
     width: 500px;
@@ -275,7 +305,33 @@ footer,header {
 }
 
 /* content style*/
+#master-content { 
+
+}
+
+#master-content p.quote {
+	float:left;
+	margin-left: 10px;
+	margin-right: 10px;
+    font-style: italic;
+    -moz-border-radius: 10px;
+  	border-radius: 5px;
+  	border: 1px solid #6B6B6C;
+  	padding: 10px;
+  	margin-top: -5px;
+  	opacity: 0.85;
+  	text-align:left;
+  	color: #404040;
+}
+
+#master-content p.quote span.author{
+	display:block;
+	text-align:right;
+	font-style:normal;
+	font-size: 11pt;
+}
 #master-sidebar {
+    display: inline;
     float: right;
     min-height: 400px;    
     width: 220px;
@@ -295,7 +351,10 @@ footer,header {
 }
 .edit-menu-box {            
     display: block;
-    margin: 10px;
+    margin-top: 10px;
+}
+.edit-menu-box a{
+	color: #EC3300;
 }
 .editor-field textarea {
     width: 90%;
